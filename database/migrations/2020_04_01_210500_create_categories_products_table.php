@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesProduct extends Migration
+class CreateCategoriesProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -30,6 +30,6 @@ class CreateCategoriesProduct extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories_product');
+        Schema::dropIfExists('categories_products');
     }
 }
