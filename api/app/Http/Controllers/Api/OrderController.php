@@ -56,7 +56,7 @@ class OrderController extends Controller
         }
     }
 
-    public function updateProduct(Request $request, $id)
+    public function updateOrder(Request $request, $id)
     {
         $this->validate($request, [
             'order_title' => 'required|string',
