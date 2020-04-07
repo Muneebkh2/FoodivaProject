@@ -358,3 +358,77 @@ h1, h2, h3, h4, h5, h6 {
     height: 90%;
     width: 100%;
 }
+
+/* product page */
+.product__card{
+    border-radius: 3px;
+    padding: 6px 16px;
+}
+.product__card:hover{
+    background-color: rgba(228, 228, 228, 0.53);
+}
+.product__card > a >.product__title{
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+/* product model */
+.product__model{
+    border: 1px solid #960202;
+    border-radius: 0px;
+}
+.product__model > .close{
+    color: #960202;
+}
+.product__model > .modal-header{
+    padding: 5px 10px;
+}
+.product__model > .modal-header > h3{
+    font-size: 20px;
+    font-weight: 600;
+}
+.product__details h3{
+    color: #960202;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 70px;
+}
+.product__details p{
+    font-size: 18px;
+}
+.btn-custom{
+    border: 1px solid transparent;
+    background-color: #960202;
+    color: #fff;
+    border-radius: 0px;
+}
+.btn-custom:hover{
+    border: 1px solid #960202;
+    background-color: #fff;
+    color: #960202;
+}
+
+.order-form .form-control{
+    border-radius: 0px!important;
+    height: auto;
+    border-color: #960202!important;
+    padding: 4px 10px;
+}
+.product__modal__title{
+    font-size: 18px;
+    padding: 3px 15px;
+    color: #fff;
+}
+.accordion > .card > .card-header{
+    border: 1px solid #960202;
+    background-color: #960202;
+}
+.collapse > .card-body{
+    border: 1px solid #960202;
+}
+.search_box{
+    padding: 8px 19px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0px;
+}
