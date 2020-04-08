@@ -1,1 +1,39 @@
-<p>header works!</p>
+<!-- header -->
+<header class="navigation-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light" style="padding: unset !important;">
+            <a class="navbar-brand" href="#" style="padding: unset !important;">
+                <img src="assets/images/logo.png" class="w-50">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+                        <a routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">
+                            {{ menuItem.title }}
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item mx-2">
+                        <a class="nav-link font font-weight-bolder" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item mx-2 active">
+                        <a class="nav-link font font-weight-bolder" href="brands.html">BRANDS</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link font font-weight-bolder" href="products.html">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link font font-weight-bolder" href="about.html">ABOUT US</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link font font-weight-bolder" href="contact.html">CONTACT US</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
