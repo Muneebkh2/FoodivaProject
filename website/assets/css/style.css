@@ -1,10 +1,14 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 header {
     /* font-family: "Lora", serif; */
     background: #fff;
     padding: 0rem 0;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
-
+header.navigation-header{
+    line-height: 3.0;
+}
 header .navbar-brand .logo {
     width: 150px;
 }
@@ -34,63 +38,96 @@ header .top-menu li a {
     font-weight: bold;
     text-transform: capitalize;
 }
-
-.main_footer {
-    background: #292929;
-    color: #a2a2a2;
+h2.page-main-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #960202;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
-
-.main_footer h2 {
+/* footer styling */
+footer .footer-top{
+    background-color: #000000;
+}
+.footer-top p{
     color: #fbfbfb;
-    font-size: 18px;
+}
+.newsletter_field{
+    border-radius: 0px;
+    border-color: #960202;
+    margin: 0px 0px 0px 0px;
+}
+.newsletter_btn{
+    padding: 0px 40px;
+    height: 38px;
+}
+footer .footer-main {
+    background-color: #161616!important;
+    color: #666;
 }
 
-.main_footer a:hover {
-    color: #e17127 !important;
-    text-decoration: underline;
-    text-underline-position: under;
+.footer-main h2 {
+    color: #fbfbfb;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
-.main_footer .menu ul {
-    list-style: none;
-    padding: 0px;
-}
-
-.main_footer .menu ul li {
-    text-decoration: none;
-}
-
-.main_footer .menu ul li a {
-    color: #a2a2a2;
-}
-
-.main_footer address ul {
-    list-style: none;
-    padding: 0px;
-}
-
-.main_footer address ul li {
-    text-decoration: none;
-}
-
-.main_footer address ul li a {
-    color: #a2a2a2;
-}
-
-.main_footer .footer-bottom p {
-    margin-bottom: 0px;
+.footer-main p{
     font-size: 16px;
+    color: #f6f6f6;
+}
+
+.footer-main a:hover {
+    color: #960202 !important;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.menu ul.footer-nav li {
+    text-decoration: none;
+}
+
+.menu ul.footer-nav li a {
+    color: #d8d8d8;
+    font-size: 12px;
+    text-transform: capitalize;
+    line-height: 28px;
+}
+
+.footer-main address ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-main address ul li {
+    text-decoration: none;
+}
+
+.footer-main address ul li a {
+    color: #d8d8d8;
+    font-size: 12px;
+}
+
+.footer-main .footer-bottom p {
+    margin-bottom: 0px;
+    font-size: 12px;
     color: #fbfbfb;
 }
 
-.main_footer .footer-bottom p a {
+.footer-main .footer-bottom p a {
     text-decoration: underline;
     text-underline-position: under;
     color: #fbfbfb;
 }
 
-.main_footer .footer-bottom p a :hover {
-    color: #e17127;
+.footer-main .footer-bottom p a :hover {
+    color: #960202;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -126,12 +163,30 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 .hero-heading {
-    height: 90px;
-    background-color: #f0f0f0;
+    background: linear-gradient(-45deg, #ee7752, #e17127, #960202, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    height: 130px;
 }
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.hero-heading h1 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 42px;
+}
 .category_sections {
     margin-top: -65px;
     position: relative;
@@ -366,6 +421,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .product__card:hover{
     background-color: rgba(228, 228, 228, 0.53);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    border-color: #960202;
+}
+.product__card:hover .product__title{
+    padding-left: 5px;
+    color: #960202;
+    transition: all ease 0.7s;
 }
 .product__card > a >.product__title{
     font-size: 16px;
