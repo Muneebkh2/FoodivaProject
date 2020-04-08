@@ -45,6 +45,10 @@ h2.page-main-title {
     margin-bottom: 30px;
     font-family: 'Montserrat', sans-serif;
 }
+
+.border-1{
+    border: 1px solid #960202;
+}
 /* footer styling */
 footer .footer-top{
     background-color: #000000;
@@ -137,7 +141,9 @@ h1, h2, h3, h4, h5, h6 {
 .offical-color {
     color: #960202;
 }
-
+.btn-large{
+    padding: 8px 60px;
+}
 #hero {
     position: relative;
     height: 450px;
@@ -492,8 +498,81 @@ h1, h2, h3, h4, h5, h6 {
     padding: 8px 19px;
     width: 100%;
     border-radius: 5px;
-    border: 0px;
+    border: 1px solid #960202;
 }
 .search_box:focus{
     outline-color: #960202;
+}
+/* conatct form */
+.contact-form .form-control{
+    border-color: #960202;
+    border-radius: 0px;
+}
+
+/* footer contact details icon */
+.contact_heading{
+    font-size: 22px;
+    font-weight: 600;
+    color: #960202;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+}
+.footer__contacts__details ul{
+    list-style: none;
+}
+.footer__contacts__details ul li:last-child{
+    line-height: 28px;
+}
+.footer__contacts__details ul li{
+    line-height: 32px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.footer__contacts__details ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+.footer__contacts__details ul li a:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.footer__contacts__details ul li::before{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Pro"; 
+    font-weight: lighter;
+    color: #960202; 
+    margin-left: -35px;
+    padding: 0px 10px;
+}
+.footer__contacts__details ul li:nth-child(1)::before{
+    content: "\f879";
+}
+.footer__contacts__details ul li:nth-child(2)::before{
+    content: "\f0e0";
+}
+.footer__contacts__details ul li:nth-child(3)::before{
+    content: "\f041";
+}
+ul.socail_icons{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.socail_icons li{
+    display: inline-block;
+    margin: 0px 8px;
+}
+ul.socail_icons li a{
+    font-size: 26px;
+    color: #02a25c;
+}
+ul.socail_icons li:nth-child(1):hover a{
+    color: #4267B2;
+}
+ul.socail_icons li:nth-child(2):hover a{
+    color: #2867B2;
 }
