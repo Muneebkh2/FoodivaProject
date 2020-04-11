@@ -10,6 +10,7 @@ class Product extends Model
         'id',
         'name',
         'sku',
+        'categories_id'
     ];
 
     // haan abhy call nhn karwaya likh diya function dono main elk dosray ka..
