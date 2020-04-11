@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "1116085f-29c0-49ad-a1e5-9701bb5ec60c",
+		"name": "Foodiva Api",
+		"description": "A request for handling foodiva website api.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "muneeb",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "muneebkh5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "muneeb",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "muneeb",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/register",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						},
+						"description": "A request for register a new user."
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "muneebkh5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "muneeb",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/login",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "A request for login a user."
+					},
+					"response": []
+				}
+			],
+			"description": "A authentication request handling folder.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Categorey",
+			"item": [
+				{
+					"name": "All Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/category/all",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"all"
+							]
+						},
+						"description": "A request for getting all categories."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Masalah",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "category/masala",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/category/create",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"create"
+							]
+						},
+						"description": "A request for creating category."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "garam masala",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "category/garam-masala",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/category/edit/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"edit",
+								"2"
+							]
+						},
+						"description": "A request for editing current category."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/category/delete/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"delete",
+								"2"
+							]
+						},
+						"description": "A request for deleting category."
+					},
+					"response": []
+				}
+			],
+			"description": "A category request handling folder.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "All Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/products/all",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"all"
+							]
+						},
+						"description": "A request for getting all categories."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"product1\",\n\t\"sku\" : {\n\t\t\"quantity\": 20,\n\t\t\"status\": \"available\"\n\t},\n\t\"categories_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/products/create",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"create"
+							]
+						},
+						"description": "A request for creating category."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Products",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "garam masala",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "category/garam-masala",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/products/edit/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"edit",
+								"2"
+							]
+						},
+						"description": "A request for editing current category."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDk4ODRmYTI5NmY5YjlhOGFmNjY5YWZkMDFjMjYwMGU0ZTYyOWEwZGJjNDY4OGE2ZjYxZDg5MTk1YTc4NWU5ZjQwNTgyN2JiNWM4YjcyMWUiLCJpYXQiOjE1ODY1Nzk1NTUsIm5iZiI6MTU4NjU3OTU1NSwiZXhwIjoxNjE4MTE1NTU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jKIBQcSYckY0qC-lrXJ7GUAnQ2aXHSsces5-xTUAhRmKHD64E1mPvzZdr0_eydY2F74_gLSbkPbPnFvaA3Vs6bavCBLiKs4a8pkSN7cPvT7rIQHKRuHB5vAjwvayC30NS9FD7MjWKWw0qjpXsmUizRMx6pODmL21bBw_2mJWCQwuz1E2zhBHusG_Drw1pVio2wiggHpVC-FmvEEzxa2_XdXtl-yXsCi6BtuugWMfYBp3ZTty6oiV6IFMAK_czghPq_IGi30_G0KdXODa4TS7h3sL-kGfIerenfp4ZTaJjXOVfG1diQFBTr0npjcVryi_tNWgE-b9-W031m61_qYHLTC7T9heM5i_E3oPKKnPH6TeSVnoStTTODug3EHPiaGabDUqcIG_cCnXIGCBYk0Ks7K_lpmD1cBA2rzis4Dk-6N9g1paYHWmeCfBpMmt98I5AIblVvyceEm-NRhblBMQHKdMpyHMGlBq8Vn-PGbx-DBYOKatoFpquCv-2srfoGJbHHnVWbVq97YRWQRThZEItw5b1kQd48dTBedovFhrfGEtFuU7hmByz6SG0wEw9egJX9PtR98Sr__ExVVkgZJcfXk5-TKodDFk5REwUes7i1VhKb_LtLd7PQgJuUFtbCRX7Q1qH_UT00ygnDHK3P7oWRk80Wnh9w4ZK2WFFrSfPdI"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/products/delete/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"delete",
+								"2"
+							]
+						},
+						"description": "A request for deleting category."
+					},
+					"response": []
+				}
+			],
+			"description": "A category request handling folder.",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

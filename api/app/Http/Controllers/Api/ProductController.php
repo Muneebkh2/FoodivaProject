@@ -39,15 +39,15 @@ class ProductController extends Controller
 
             $product = new Product();
             $product->name = $name;
-            $product->sku = $sku;
+            $product->sku = json_encode($sku);
             $product->save();
             // update foriegn key .. 
             $product->Category()->attach($categories);
 
             return response()->json(['message' => 'New Product Created.'], $this->successStatus);
 
-        } catch (\Throwable $th) {
-            return response()->json(['message' => 'Creating failed !'], 409);
+        } catch (\Exception $e) {
+            return response()->json($e, 409);
         }
     }
 
