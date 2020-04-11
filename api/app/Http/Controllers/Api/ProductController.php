@@ -27,6 +27,7 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required|string',
             'sku' => 'required',
+            'categories_id' => 'required'
         ]);
 
         // var initalized.. 
@@ -55,6 +56,7 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required|string',
             'sku' => 'required',
+            'categories_id' => 'required'
         ]);
 
         // var initalized.. 
