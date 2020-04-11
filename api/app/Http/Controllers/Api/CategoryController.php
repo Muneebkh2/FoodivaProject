@@ -10,6 +10,18 @@ class CategoryController extends Controller
 {
     public $successStatus = 200;
 
+    public function getAllCategories()
+    {
+        $category = Category::all();
+        return response()->json($category, $this->successStatus);
+    }
+
+    public function getCategoryById($id)
+    {
+        $category = Category::find($id);
+        return response()->json($category, $this->successStatus);
+    }
+
     public function createCategory(Request $request)
     {
         $this->validate($request, [
