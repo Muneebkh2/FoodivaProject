@@ -361,46 +361,46 @@ h1, h2, h3, h4, h5, h6 {
     height: 85px;
 }
 
-.brands_section #brandCarousel .owl-nav button {
+.brands_section .brandCarousel .owl-nav button {
     position: absolute;
     top: 50%;
-    border: 1px solid #960202;
-    background-color: #fff;
-    color: #960202;
+    border: 1px solid #960202!important;
+    background-color: #fff!important;
+    color: #960202!important;
     margin: 0;
     transition: all 0.3s ease-in-out;
 }
 
-.brands_section #brandCarousel .owl-nav button:hover {
+.brands_section .brandCarousel .owl-nav button:hover {
     background-color: #960202;
     color: #fff;
 }
 
-.brands_section #brandCarousel .owl-nav button.owl-prev, .brands_section #brandCarousel .owl-nav button.owl-next {
+.brands_section .brandCarousel .owl-nav button.owl-prev, .brands_section .brandCarousel .owl-nav button.owl-next {
     width: 45px;
     line-height: 50px;
     margin-top: -28px;
 }
 
-.brands_section #brandCarousel .owl-nav button.owl-prev span, .brands_section #brandCarousel .owl-nav button.owl-next span {
+.brands_section .brandCarousel .owl-nav button.owl-prev span, .brands_section .brandCarousel .owl-nav button.owl-next span {
     font-size: 35px;
 }
 
-.brands_section #brandCarousel .owl-nav button.owl-prev {
+.brands_section .brandCarousel .owl-nav button.owl-prev {
     left: -90px;
 }
 
-.brands_section #brandCarousel .owl-nav button.owl-next {
+.brands_section .brandCarousel .owl-nav button.owl-next {
     right: -90px;
 }
 
-.brands_section #brandCarousel .card {
+.brands_section .brandCarousel .card {
     height: 200px;
     border: 1px solid #960202;
     border-radius: 0px !important;
 }
 
-.brands_section #brandCarousel .card img {
+.brands_section .brandCarousel .card img {
     padding: 20px;
     margin: auto;
     height: 90%;

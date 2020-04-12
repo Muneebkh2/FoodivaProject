@@ -13,8 +13,7 @@
         <div class="row py-3 px-2">
             <div class="col-lg-6 px-2 mb-3 mb-lg-0">
                 <div class="image_card">
-                    <img src="assets/images/banners/banner1-2.jpg" alt="f"
-                        class="w-100">
+                    <img src="assets/images/banners/banner1-2.jpg" alt="f" class="w-100">
                     <div class="card_content">
                         <h2>Cinnamon</h2>
                         <a href="!#">Shop Now</a>
@@ -23,8 +22,7 @@
             </div>
             <div class="col-lg-6 px-2 mb-3 mb-lg-0">
                 <div class="image_card second_image_card">
-                    <img src="assets/images/banners/slide3-1.jpg" alt="s"
-                        class="w-100">
+                    <img src="assets/images/banners/slide3-1.jpg" alt="s" class="w-100">
                     <div class="card_content">
                         <h2>Spice blends</h2>
                         <a href="!#">Shop Now</a>
@@ -35,8 +33,7 @@
         <div class="row py-3 px-2">
             <div class="col-lg-6 px-2 mb-3 mb-lg-0">
                 <div class="image_card">
-                    <img src="assets/images/banners/banner4.jpg" alt="t"
-                        class="w-100">
+                    <img src="assets/images/banners/banner4.jpg" alt="t" class="w-100">
                     <div class="card_content">
                         <h2>Salt free</h2>
                         <a href="!#">Shop Now</a>
@@ -45,8 +42,7 @@
             </div>
             <div class="col-lg-6 px-2 mb-3 mb-lg-0">
                 <div class="image_card">
-                    <img src="assets/images/banners/banner5-1.jpg" alt="f"
-                        class="w-100">
+                    <img src="assets/images/banners/banner5-1.jpg" alt="f" class="w-100">
                     <div class="card_content">
                         <h2>Mint Leaves</h2>
                         <a href="!#">Shop Now</a>
@@ -97,43 +93,14 @@
 <section class="brands_section">
     <div class="container">
         <div class="row my-5">
-            <div id="brandCarousel" class="brand-carousel owl-carousel owl-theme">
-                <div class="item">
-                    <div class="card border-1">
-                        <img src="assets/images/brands/chinar.jpg" alt="">
+            <div class="col-lg-12 p-0">
+                <owl-carousel [options]="BrandSlideOptions" [carouselClasses]="['brandCarousel','owl-theme']">
+                    <div class="item" *ngFor="let image of brandSlideImages;let i = index">
+                        <div class="card border-1">
+                            <img src={{image}} />
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="card border-1">
-                        <img src="assets/images/brands/mdh.jpg" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-1">
-                        <img src="assets/images/brands/shan.png" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-1">
-                        <img src="assets/images/brands/dabur.png" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-1">
-                        <img src="assets/images/brands/haldirams.png"
-                            alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-1">
-                        <img src="assets/images/brands/amul.jpg" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-1">
-                        <img src="assets/images/brands/ashoka.png" alt="">
-                    </div>
-                </div>
+                </owl-carousel>
             </div>
         </div>
     </div>
