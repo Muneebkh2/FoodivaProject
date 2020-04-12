@@ -10,6 +10,9 @@ import { ProductsComponent } from './pages/products/products.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+// Importing libraries 
+import { OwlModule } from 'ngx-owl-carousel';
+import { bootstrap } from "bootstrap";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { ContactComponent } from './pages/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OwlModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
