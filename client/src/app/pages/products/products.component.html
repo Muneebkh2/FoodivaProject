@@ -12,7 +12,7 @@
     <div class="container my-5">
         <div class="row pb-5">
             <div class="col-md-10 mx-auto">
-                <input type="search" name="search" id="" placeholder="type name of product to search..."
+                <input [(ngModel)]="searchText" placeholder="type name of product to search..."
                     class="search_box shadow">
             </div>
         </div>
@@ -22,190 +22,20 @@
 <section id="main-content">
     <div class="container m y-5">
         <!-- 1st row -->
-        <div class="col-lg-12">
+        <div class="col-lg-12" *ngFor="let category of displayProducts">
+            <h4 class="category_title">{{ category.name }}</h4>
             <div class="row">
-                <div class="col-lg-3 mb-3 mb-lg-5">
+                <div class="col-lg-3 mb-3 mb-lg-5" *ngFor="let product of category.product | filter:searchText">
                     <div class="card shadow-sm p-2 product__card">
                         <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Golden Temple Atta</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Aashirwad atta</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Meera Besan</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Swad Besan</h4>
+                            data-target="#staticBackdrop" (click)="productInfo.getProductData(product.id)">
+                            <h4 class="product__title font">{{ product.name }}</h4>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 2nd row -->
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Besan India</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Sooji Coarse</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Sooji Coarse 5</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Rice Flour</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 2nd row -->
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Rice Flour 5</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Idly Rava</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Idly Rava</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Idly Rice</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 2nd row -->
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Chinar Gold Basmati rice</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Royal Chef Secret Basmati rice</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Chinar Select Basmati rice</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Sona Massori Rice</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 2nd row -->
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Ponni Raw Rice</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Bay Leaves</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Cinamon stick</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3 mb-lg-5">
-                    <div class="card shadow-sm p-2 product__card">
-                        <a href="#" class="text-decoration-none text-dark" data-toggle="modal"
-                            data-target="#staticBackdrop">
-                            <h4 class="product__title font">Cinamon stick</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
 
@@ -214,67 +44,11 @@
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content product__model">
-            <!-- <div class="modal-header">
-                <h3 class="modal-title ml-auto" id="staticBackdropLabel">Order Now</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div> -->
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="product__details">
-                            <h3>Shan Masala</h3>
-                            <p class="mb-3">Availability:
-                                <span class="badge badge-pill badge-success">in stock</span>
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, ut et, ac vel nibh a risus, in nisl vehicula etiam
-                                pharetra integer, pretium mus iaculis suspendisse suscipit vel.
-                            </p>
-
-                            <div class="accordion" id="accordionExample">
-                                <div class="card border-0">
-                                    <div class="card-header p-0 bg-transparent border-0" id="headingOne"
-                                        data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
-                                        aria-controls="collapseOne">
-                                        <!-- <h2 class="mb-0 class product__modal__title">
-                                             Order a product
-                                        </h2> -->
-                                        <div class="col-12 py-2 px-1">
-                                            <button type="button"
-                                                class="col btn btn-outline-danger btn-custom rounded-0 font">Order a
-                                                product</button>
-                                        </div>
-                                    </div>
-                                    <div id="collapseOne" class="collapse mt-4" aria-labelledby="headingOne"
-                                        data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="order-form">
-                                                <input type="textr" name="name" id="" class="form-control mb-3"
-                                                    placeholder="Enter name">
-                                                <input type="email" name="email" id="" class="form-control mb-3"
-                                                    placeholder="Enter email">
-                                                <input type="number" name="quantity" id="" class="form-control mb-3"
-                                                    placeholder="Enter quantity">
-                                                <a href="#" class="btn btn-danger btn-custom mt-2">
-                                                    Order Now
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <img src="assets/images/products/product_473.png" class="img-fluid">
-                    </div>
-                </div>
+                <app-product-info #productInfo></app-product-info>
             </div>
         </div>
     </div>
