@@ -1,0 +1,87 @@
+ul.navbar-nav {
+    li.nav-item {
+        padding: 0px 10px;
+        a {
+            font-family: "Lora", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #960202;
+            font-weight: 600;
+            padding: 7px 7px;
+            &.active,
+            &:hover {
+                border-bottom: 5px solid #960202;
+            }
+        }
+    }
+    li.cart {
+        margin: auto;
+        padding: 0px 18px;
+        a {
+            position: relative;
+            i {
+                font-size: 20px;
+                color: #960202;
+            }
+            .counter {
+                background-color: #960202;
+                border-radius: 50%;
+                color: #ffffff;
+                padding: 3px 5px;
+                position: absolute;
+                line-height: 10px;
+                font-size: 12px;
+                left: 16px;
+                top: -8px;
+            }
+        }
+    }
+}
+
+.TopBar{
+    background-color: #960202;
+    padding: 10px 0px;
+    ul{
+        list-style: none;
+        margin-bottom: 0px;
+        li{
+            display: inline-block;
+            padding: 0px 0px;
+            margin: 0px 10px;
+            text-decoration: none;
+            // &:hover{
+            //     background-color: #ffffff;
+            //     &::before, a{
+            //         color: #960202;
+            //     }
+            // }
+
+
+            &::before{
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                font-family: "Font Awesome 5 Pro"; 
+                font-weight: lighter;
+                color: #ffffff; 
+                padding: 0px 5px 0px 0px;
+                // margin-left: -35px;
+                // padding: 0px 10px;
+            }
+            &:nth-child(1)::before{
+                content: "\f0e0";
+            }&:nth-child(2)::before{
+                content: "\f879";
+            }
+            a{
+                color: #ffffff;
+                &:hover{
+                    text-decoration: underline;
+                    // text-underline-position: under;
+                }
+            }
+        }
+    }
+}

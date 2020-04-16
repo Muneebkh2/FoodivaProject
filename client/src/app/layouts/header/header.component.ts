@@ -22,14 +22,18 @@ export const navbarROUTES: RouteInfo[] = [
 export class HeaderComponent implements OnInit {
 
     public menuItems: any[]
+    countCartProducts: number = 0
 
     constructor() { }
 
     ngOnInit(): void {
         this.main__menu()
+        let cart: any = JSON.parse(localStorage.getItem('cart'));
+        // console.log(cart)
+        this.countCartProducts = cart.length
     }
 
-    main__menu(): void { 
+    main__menu(): void {
         this.menuItems = navbarROUTES.filter(menuItem => menuItem)
     }
 
