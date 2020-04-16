@@ -1,0 +1,30 @@
+table.table.table-bordered {
+    border: 3px solid #79372c;
+    thead{
+        border-bottom: 3px solid #79372c;  
+        th{
+            color: #79372c;
+        }
+    }
+    tbody{
+        th{
+            color: #79372c;
+        }
+    }
+}
+.btn-custom:disabled{
+    cursor: not-allowed;
+    &:hover{
+        background-color: #960202!important;
+        color: #ffffff!important;
+    }
+}
+a.text-link{
+    color: #960202;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Lora', sans-serif;
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+}
