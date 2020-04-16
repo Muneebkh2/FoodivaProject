@@ -45,6 +45,20 @@ h2.page-main-title {
     margin-bottom: 30px;
     font-family: 'Montserrat', sans-serif;
 }
+/* section Title */
+h1.section_title{
+    color: #960202;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+/* About Section Para */
+p.para{
+    font-size: 20px;
+    margin-top: 35px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
 
 .border-1{
     border: 1px solid #960202;
@@ -55,11 +69,15 @@ footer .footer-top{
 }
 .footer-top p{
     color: #fbfbfb;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 0px;
 }
 .newsletter_field{
-    border-radius: 0px;
-    border-color: #960202;
-    margin: 0px 0px 0px 0px;
+    border-radius: 0px!important;
+    border-color: #960202!important;
+    margin: 0px 0px 0px 0px!important;
 }
 .newsletter_btn{
     padding: 0px 40px;
@@ -80,6 +98,9 @@ footer .footer-main {
 .footer-main p{
     font-size: 16px;
     color: #f6f6f6;
+    line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
 }
 
 .footer-main a:hover {
@@ -101,7 +122,9 @@ footer .footer-main {
     color: #d8d8d8;
     font-size: 12px;
     text-transform: capitalize;
-    line-height: 28px;
+    line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
 }
 
 .footer-main address ul {
@@ -116,6 +139,9 @@ footer .footer-main {
 .footer-main address ul li a {
     color: #d8d8d8;
     font-size: 12px;
+    line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
 }
 
 .footer-main .footer-bottom p {
@@ -144,6 +170,8 @@ h1, h2, h3, h4, h5, h6 {
 .btn-large{
     padding: 8px 60px;
 }
+
+/* landing page */
 #hero {
     position: relative;
     height: 450px;
@@ -155,7 +183,17 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
     position: absolute;
 }
-
+#hero h1{
+    font-size: 70px;
+    text-transform: uppercase;
+}
+#hero p{
+    font-size: 24px;
+    text-transform: uppercase;
+    /* font-family: 'Lora', sans-serif; */
+    font-weight: 700;
+    letter-spacing: 3px;
+}
 #hero h1, #hero p {
     color: #fff;
     z-index: 2;
@@ -408,7 +446,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .brands-card {
     height: 200px;
-    border: 1px solid #960202;
+    border: 1px solid #960202!important;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     border-radius: 0px !important;
     margin-bottom: 30px;
 }
@@ -465,15 +504,15 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
 }
 .btn-custom{
-    border: 1px solid transparent;
-    background-color: #960202;
-    color: #fff;
-    border-radius: 0px;
+    border: 1px solid transparent!important;
+    background-color: #960202!important;
+    color: #fff!important;
+    border-radius: 0px!important;
 }
 .btn-custom:hover{
-    border: 1px solid #960202;
-    background-color: #fff;
-    color: #960202;
+    border: 1px solid #960202!important;
+    background-color: #fff!important;
+    color: #960202!important;
 }
 
 .order-form .form-control{
