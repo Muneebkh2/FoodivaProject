@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth:api'], function () {
     // Route::get('users', 'Api\AuthController@getAuthUser');
 });
+
+// get-Products
+Route::get('getproducts', 'Api\CategoryController@getproducts');
+
 // Category Routes >>>
 Route::get('category/all', 'Api\CategoryController@getAllCategories');
 Route::get('category/id/{id}', 'Api\CategoryController@getCategoryById');
