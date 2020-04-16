@@ -10,6 +10,11 @@ class CategoryController extends Controller
 {
     public $successStatus = 200;
 
+    public function getproducts(){
+        $products = Category::with('Product')->get();
+        return response()->json($products, $this->successStatus);
+    }
+
     public function getAllCategories()
     {
         $category = Category::all();
