@@ -28,9 +28,11 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit(): void {
         this.main__menu()
-        let cart: any = JSON.parse(localStorage.getItem('cart'));
+        let cart: any = JSON.parse(localStorage.getItem('cart'))
         // console.log(cart)
-        this.countCartProducts = cart.length
+        if (cart != null) {
+            this.countCartProducts = cart.length
+        }
     }
 
     main__menu(): void {
