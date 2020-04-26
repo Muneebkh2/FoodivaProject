@@ -1,0 +1,54 @@
+section.formSection{
+    padding: 110px 0px;
+    
+    form.auth__form{
+        border: 1px solid #960202;
+        border-radius: 5px;
+        // padding: 45px;
+
+        .form-title{
+            h2{
+                font-family: "Lora", serif;
+                font-size: 24px;
+                color: #960202;
+                text-transform: uppercase;
+                font-weight: 600;   
+            }
+            p{
+                font-family: "Montserrat", sans-serif;
+                font-size: 14px;
+                color: #960202;
+                text-transform: lowercase;  
+            }
+        }
+
+        label{
+            font-size: 18px;
+            font-family: "Lora", serif;
+            color: #960202;
+        }
+        input.form-control{
+            height: auto;
+            padding: 2px 5px;
+            border-color: #960202;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+        button.btn-form{
+            color: #ffffff;
+            border-color: transparent;
+            background-color: #960202;
+            padding: 2px 40px;
+            text-transform: lowercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+
+            &:hover{
+                color: #960202;
+                border-color: #960202;
+                background-color: transparent;
+            }
+        }
+    }
+}
