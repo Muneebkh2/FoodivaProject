@@ -17,6 +17,7 @@ class CreateProductTable extends Migration
             $table->id();
             $table->string('name');
             $table->json('sku');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
