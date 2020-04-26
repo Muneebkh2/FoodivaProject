@@ -34,13 +34,21 @@ class ProductController extends Controller
         $name = $request->input('name');
         $sku = $request->input('sku');
         $categories = $request->input('categories_id');
+        $image = $request->file('product_image'); //get the file
 
         try {
 
             $product = new Product();
             $product->name = $name;
             $product->sku = json_encode($sku);
+            if ($request->hasFile('product_image')) {  //check the file present or not
+                $name = "product_image_".time().'_.'.$image->getClientOriginalExtension(); //get the  file extention
+                $destinationPath = public_path('/products/images'); //public path folder dir
+                $image->move($destinationPath, $name);  //mve to destination you mentioned 
+                $product->image = $name;
+            }
             $product->save();
+            
             // update foriegn key .. 
             $product->Category()->attach($categories);
 
@@ -63,6 +71,7 @@ class ProductController extends Controller
         $name = $request->input('name');
         $sku = $request->input('sku');
         $categories = $request->input('categories_id');
+        $image = $request->file('product_image'); //get the file
 
         try {
 
@@ -71,10 +80,22 @@ class ProductController extends Controller
             if (!$product) {
                 return response()->json(['message' => 'Product not found !'], 409);
             } else {
-                $product->update([
-                    'name' => $name,
-                    'sku' => $sku,
-                ]);
+                if ($request->hasFile('product_image')) {  //check the file present or not
+                    $name = "product_image_".time().'_.'.$image->getClientOriginalExtension(); //get the  file extention
+                    $destinationPath = public_path('/products/images'); //public path folder dir
+                    $image->move($destinationPath, $name);  //mve to destination you mentioned 
+                    $product->image = $name;
+                    $product->update([
+                        'name' => $name,
+                        'sku' => $sku,
+                        'image' => $image
+                    ]);
+                }else{
+                    $product->update([
+                        'name' => $name,
+                        'sku' => $sku,
+                    ]);
+                }
                 $product->Category()->sync($categories);
                 
                 return response()->json(['message' => 'Product Updated Succesfully.'], $this->successStatus);
