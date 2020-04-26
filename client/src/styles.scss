@@ -5,3 +5,121 @@
     color: #960202;
     font-weight: 600;
 }
+
+.productCarousel .owl-item img{
+    border-radius: 5px;
+}
+.productCarousel .owl-nav button {
+    position: absolute;
+    top: 50%;
+    border: 1px solid #960202!important;
+    background-color: #fff!important;
+    color: #960202!important;
+    margin: 0!important;
+    transition: all 0.3s ease-in-out;
+}
+
+.productCarousel .owl-nav button:hover,
+.productCarousel .owl-nav button:focus
+{
+    outline: none!important;
+    background-color: #960202!important;
+    color: #fff!important;
+}
+
+.productCarousel .owl-nav button.owl-prev, .productCarousel .owl-nav button.owl-next {
+    width: 45px;
+    line-height: 50px!important;
+    margin-top: -28px!important;
+}
+
+.productCarousel .owl-nav button.owl-prev span, .productCarousel .owl-nav button.owl-next span {
+    font-size: 26px;
+    line-height: 3;
+}
+
+.productCarousel .owl-nav button.owl-prev {
+    left: -90px;
+}
+
+.productCarousel .owl-nav button.owl-next {
+    right: -90px;
+}
+
+button.owl-next.disabled,
+button.owl-prev.disabled {
+    display: none!important;
+}
+// ant table design
+.ant-table table{
+    border: 1px solid #960202;
+    thead{
+        border-bottom: 1px solid #960202!important;
+    }
+    .ant-table-thead > tr > th{
+        color: #960202;
+    }
+}
+
+section.heading{
+    h2{
+        color: #960202;
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.searchText{
+    border: 1px solid #960202;
+    border-radius: 5px;
+    padding: 2px 10px;
+    &:focus{
+        outline: none;
+    }
+}
+.searchText,
+.btn-inner{
+    font-size: 14px!important;
+    text-transform: lowercase;
+    font-family: 'Montserrat', serif;
+}
+.btn-inner{
+    border: 1px solid transparent!important;
+    background-color: #960202!important;
+    color: #fff!important;
+    border-radius: 5px!important;
+    height: auto;
+    padding: 2px 10px!important;
+}
+.btn-inner:hover{
+    border-color: #960202;
+    background-color: transparent;
+    color: #960202;
+}
+
+// customForm
+form.custom-form {
+    border: 1px solid #960202;
+    padding: 20px;
+}
+form.custom-form .form-control,
+form.custom-form  .custom-select,
+form.custom-form .custom-file-input,
+form.custom-form  .custom-file-label,
+form.custom-form .custom-file-label::after
+{
+    height: auto;
+    padding: .2rem 0.75rem;
+    border-color: #960202;
+}
+form.custom-form .btn-custom-form{
+    background-color: #960202;
+    color: #fff;
+    border: 1px solid transparent;
+}
+form.custom-form .btn-custom-form:hover{
+    background-color: transparent;
+    color: #960202;
+    border-color: #960202;
+}

@@ -61,7 +61,7 @@ p.para{
 }
 
 .border-1{
-    border: 1px solid #960202;
+    border: 1px solid #960202!important;
 }
 /* footer styling */
 footer .footer-top{
@@ -279,9 +279,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .feature_products_section h1.title {
-    font-size: 40px;
+    font-size: 52px;
     text-transform: uppercase;
     color: #960202;
+    font-weight: 600;
+}
+.feature_products_section h6.subtitle{
+    color: #960202;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-left: 5px;
 }
 
 .owl-carousel .products {

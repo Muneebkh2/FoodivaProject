@@ -2,7 +2,8 @@
     <div class="container-fluid d-flex align-items-center justify-content-center h-100">
         <div class="content text-center">
             <h1>Welcome to Foodiva</h1>
-            <p>A spices distributor company in usa</p>
+            <!-- <p>A spices distributor company in usa</p> -->
+            <p>leading foodservice distributor & <br> a great company in usa</p>
         </div>
     </div>
 </div>
@@ -76,16 +77,23 @@
 
 <!-- Products Section -->
 <section class="feature_products_section">
-    <div class="container-fluid py-5 px-5">
+    <div class="container py-5">
         <div class="row pb-3">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12 text-left">
                 <h1 class="title">Featured Products</h1>
+                <h6 class="subtitle">some of our fine handpicked products on sale</h6>
             </div>
         </div>
         <div class="row">
-            <div class="owl-carousel owl-theme">
-                <div class="item products">
-                </div>
+            <div class="col-lg-12 py-5">
+                <owl-carousel [options]="ProductSlideOptions" [carouselClasses]="['productCarousel','owl-theme']">
+                    <div class="item" *ngFor="let product of productSlideImages">
+                        <div class="card border-1">
+                            <img src={{product.image}} />
+                        </div>
+                        <h4>{{product.name}}</h4>
+                    </div>
+                </owl-carousel>
             </div>
         </div>
     </div>
@@ -114,6 +122,9 @@
 <section class="brands_section">
     <div class="container">
         <div class="row my-5">
+            <div class="col-lg-12 text-center pb-5">
+                <h1 class="section_title">Brands We Carry</h1>
+            </div>
             <div class="col-lg-12 p-0">
                 <owl-carousel [options]="BrandSlideOptions" [carouselClasses]="['brandCarousel','owl-theme']">
                     <div class="item" *ngFor="let image of brandSlideImages;let i = index">
