@@ -16,9 +16,23 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { bootstrap } from "bootstrap";
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductInfoComponent } from './components/product-info/product-info.component';
 import { CartComponent } from './pages/cart/cart.component';
+// admin routes
+import { AuthComponent } from './pages/admin/auth/auth.component';
+import { AllProductsComponent } from './pages/admin/products/all-products/all-products.component';
+import { AddProductsComponent } from './pages/admin/products/add-products/add-products.component';
+import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
+import { AllCategoryComponent } from './pages/admin/categories/all-category/all-category.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+// import { NZ_I18N } from 'ng-zorro-antd/i18n';
+// import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 @NgModule({
     declarations: [
@@ -31,7 +45,12 @@ import { CartComponent } from './pages/cart/cart.component';
         AboutComponent,
         ContactComponent,
         ProductInfoComponent,
-        CartComponent
+        CartComponent,
+        AuthComponent,
+        AllProductsComponent,
+        AddProductsComponent,
+        AddCategoryComponent,
+        AllCategoryComponent
     ],
     imports: [
         BrowserModule,
@@ -39,9 +58,12 @@ import { CartComponent } from './pages/cart/cart.component';
         OwlModule,
         HttpClientModule,
         FormsModule,
-        Ng2SearchPipeModule
+        ReactiveFormsModule,
+        Ng2SearchPipeModule,
+        BrowserAnimationsModule,
+        NgZorroAntdModule
     ],
-    providers: [],
+    providers: [{ provide: NZ_I18N, useValue: en_US }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
