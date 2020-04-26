@@ -28,16 +28,26 @@ class OrderController extends Controller
             'order_title' => 'required|string',
             'product_id' => 'required',
             'quantity' => 'required',
-            'customer_email' => 'required|email',
-            'customer_phone' => 'required',
+            'name' => 'required',
+            'company_name' => 'required',
+            'address' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'fax' => 'required',
+            'payment_method' => 'required'
         ]);
 
         // var initalized..
         $order_title = $request->input('order_title');
         $product_id = $request->input('product_id');
         $quantity = $request->input('quantity');
-        $customer_email = $request->input('customer_email');
-        $customer_phone = $request->input('customer_phone');
+        $name = $request->input('name');
+        $company_name = $request->input('company_name');
+        $address = $request->input('address');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $fax = $request->input('fax');
+        $payment_method = $request->input('payment_method');
 
         try {
 
@@ -45,8 +55,13 @@ class OrderController extends Controller
             $order->order_title = $order_title;
             $order->product_id = $product_id;
             $order->quantity = $quantity;
-            $order->customer_email = $customer_email;
-            $order->customer_phone = $customer_phone;
+            $order->name = $name;
+            $order->company_name = $email;
+            $order->address = $address;
+            $order->email = $email;
+            $order->phone = $phone;
+            $order->fax = $fax;
+            $order->payment_method = $payment_method;
             $order->save();
 
             return response()->json(['message' => 'New Order Created.'], $this->successStatus);
@@ -62,16 +77,26 @@ class OrderController extends Controller
             'order_title' => 'required|string',
             'product_id' => 'required',
             'quantity' => 'required',
-            'customer_email' => 'required|email',
-            'customer_phone' => 'required',
+            'name' => 'required',
+            'company_name' => 'required',
+            'address' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'fax' => 'required',
+            'payment_method' => 'required'
         ]);
 
         // var initalized..
         $order_title = $request->input('order_title');
         $product_id = $request->input('product_id');
         $quantity = $request->input('quantity');
-        $customer_email = $request->input('customer_email');
-        $customer_phone = $request->input('customer_phone');
+        $name = $request->input('name');
+        $company_name = $request->input('company_name');
+        $address = $request->input('address');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $fax = $request->input('fax');
+        $payment_method = $request->input('payment_method');
 
         try {
 
@@ -84,8 +109,13 @@ class OrderController extends Controller
                     'order_title' => $order_title,
                     'product_id' => $product_id,
                     'quantity' => $quantity,
-                    'customer_email' => $customer_email,
-                    'customer_phone' => $customer_phone,
+                    'name' => $name,
+                    'company_name' => $company_name,
+                    'address' => $address,
+                    'email' => $email,
+                    'phone' => $phone,
+                    'fax' => $fax,
+                    'payment_method' => $payment_method,
                 ]);
 
                 return response()->json(['message' => 'Order Updated Succesfully.'], $this->successStatus);
