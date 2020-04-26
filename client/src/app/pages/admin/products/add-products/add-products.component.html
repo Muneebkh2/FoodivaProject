@@ -1,0 +1,44 @@
+<section class="heading pt-5">
+    <div class="container">
+        <div class="col-lg-12">
+            <h2>Add New Product</h2>
+        </div>
+    </div>
+</section>
+<section class="data_section">
+    <div class="container">
+        <div class="col-lg-8 py-5">
+            <form [formGroup]="productForm" class="custom-form" (ngSubmit)="addProduct()">
+                <div class="form-group">
+                    <label for="product_name">Product Name</label>
+                    <input type="email" id="name" formControlName="name" placeholder="Like: Shan Biryani Masalah ..." class="form-control" [ngClass]="{ 'is-invalid': FC.name.touched && FC.name.invalid }" required>
+                    <div *ngIf="FC.name.touched && FC.name.invalid" class="invalid-feedback">
+                        <div *ngIf="FC.name.errors.required">Product name is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="product_category">Select Category</label>
+                    <select class="form-control" id="product_category" class="custom-select" formControlName="category" [ngClass]="{ 'is-invalid': FC.category.touched && FC.category.invalid }" required>
+                        <option>Category 1</option>
+                        <option>Category 2</option>
+                    </select>
+                    <div *ngIf="FC.category.touched && FC.category.invalid" class="invalid-feedback">
+                        <div *ngIf="FC.category.errors.required">Please select one of the category.</div>
+                    </div>
+                </div>
+                <div class="form-groups">
+                    <label for="product_category">Select Images</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="product_image" formControlName="image" [ngClass]="{ 'is-invalid': FC.image.touched && FC.image.invalid }" required>
+                        <label class="custom-file-label" for="product_image" data-browse="Browse Images">Choose files</label>
+                        <!-- <div class="invalid-feedback">Example invalid custom file feedback</div> -->
+                        <div *ngIf="FC.image.touched && FC.image.invalid" class="invalid-feedback">
+                            <div *ngIf="FC.image.errors.required">Please upload prodcut images.</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-sm btn-custom-form mt-3" type="submit" [disabled]="!productForm.valid">Add</button>
+            </form>
+        </div>
+    </div>
+</section>
