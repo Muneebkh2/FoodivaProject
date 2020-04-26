@@ -27,6 +27,12 @@ class CategoryController extends Controller
         return response()->json($category, $this->successStatus);
     }
 
+    public function getCategoryByNAME($name)
+    {
+        $category = Category::where('name', $name)->get();
+        return response()->json($category, $this->successStatus);
+    }
+
     public function createCategory(Request $request)
     {
         $this->validate($request, [
