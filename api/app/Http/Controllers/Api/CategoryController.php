@@ -37,14 +37,16 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|string',
-            'slug' => 'required',
+            // 'slug' => 'required',
         ]);
 
         try {
 
             $category = new Category();
             $category->name = $request->input('name');
-            $category->slug = $request->input('slug');
+            $category->description = $request->input('description');
+            // $category->slug = $request->input('slug');
+            $category->slug = $request->input('name');
             $category->save();
 
             return response()->json(['message' => 'New Category Created.'], $this->successStatus);
@@ -58,7 +60,7 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|string',
-            'slug' => 'required',
+            // 'slug' => 'required',
         ]);
 
         try {
@@ -70,7 +72,9 @@ class CategoryController extends Controller
             } else {
                 $category->update([
                     'name' => $request->input('name'),
-                    'slug' => $request->input('slug'),
+                    'description' => $request->input('description'),
+                    // 'slug' => $request->input('slug'),
+                    'slug' => $request->input('name'),
                 ]);
                 return response()->json(['message' => 'Category Updated Succesfully.'], $this->successStatus);
             }
