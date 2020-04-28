@@ -1,1 +1,90 @@
-<p>all-category works!</p>
+<section class="heading pt-5">
+    <div class="container">
+        <div class="col-lg-12">
+            <h2>All Category</h2>
+        </div>
+    </div>
+</section>
+<section class="data_section">
+    <div class="container">
+        <div class="col-lg-12 d-lg-flex justify-content-end mb-3">
+            <input type="text" name="searchCategory" placeholder="type to search" class="searchText">
+            <button class="btn btn-inner ml-lg-2" [routerLink]="[ '/admin/category/add']"><i class="fal fa-plus"> </i>
+                Add new</button>
+        </div>
+        <div class="col-lg-12">
+            <nz-table #basicTable [nzData]="categoriesData">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of basicTable.data; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ data.name }}</td>
+                        <td>{{ data.description }}</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary text-white" 
+                                data-toggle="modal" 
+                                [attr.data-target]="'#updateCategoryModal' + data.id"
+                            ><i class="fal fa-edit"> </i> Edit</a>
+                            <!-- Update skill modal start -->
+                            <div class="modal fade" [attr.id]="'updateCategoryModal' + data.id" tabindex="-1"
+                                role="dialog" aria-labelledby="updateCategoryModal" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h3 class="modal-title" id="modal-title-default">
+                                                Update Category
+                                            </h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true" class="text-danger">×</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <form [formGroup]="updateCategoryForm" class="custom-form"
+                                                (ngSubmit)="editCategory(data.id)">
+                                                <div class="form-group">
+                                                    <label for="product_name">Category Name</label>
+                                                    <input type="email" id="name" formControlName="name"
+                                                        placeholder="Like: Masalah ..." value="{{data.name}}" class="form-control"
+                                                        [ngClass]="{ 'is-invalid': FC.name.touched && FC.name.invalid }"
+                                                        required ngModel>
+                                                    <div *ngIf="FC.name.touched && FC.name.invalid"
+                                                        class="invalid-feedback">
+                                                        <div *ngIf="FC.name.errors.required">Category name is required.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-groups">
+                                                    <label for="description">Description</label>
+                                                    <textarea name="description" id="description" rows="4"
+                                                        formControlName="description" class="form-control"
+                                                        placeholder="enter description here..." value="{{data.description}}" ngModel></textarea>
+                                                </div>
+                                                <button class="btn btn-sm btn-custom-form mt-3" type="submit"
+                                                    [disabled]="!updateCategoryForm.valid">Update</button>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <nz-divider nzType="vertical"></nz-divider>
+                            <a class="btn btn-sm btn-danger text-white" (click)="showDeleteModal(data.id)">
+                                <i class="fal fa-ban"> </i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </div>
+    </div>
+</section>
