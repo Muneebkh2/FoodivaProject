@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -86,6 +87,28 @@ class UserController extends Controller
 
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Error .. updating user not working !'], 409);
+        }
+
+    }
+
+    public function ContactForm(Request $request)
+    {
+
+        try {
+            $name = $request->input('name');
+            $email = $request->input('email');
+            $phone = $request->input('phone');
+            $address = $request->input('address');
+            $customermessage = $request->input('message');
+    
+            Mail::send('emails.contact_query', ['name' => $name, 'email' => $email, 'phone' => $phone, 'address' => $address, 'customermessage' => $customermessage], function ($message) {
+                $message->from('site@foodivausa.com', 'Site FoodivaUSA LLC');
+                $message->to('feedback@foodivausa.com');
+            });
+    
+            return response()->json(['message' => 'Feedback Message Sent Successfully'], $this->successStatus);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Feedback Message Sending Failed!!'], $this->successStatus);
         }
 
     }

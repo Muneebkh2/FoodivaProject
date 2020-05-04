@@ -15,17 +15,16 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id();
-            $table->string('order_title');
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->string('quantity');
+            $table->integer('order_no');
             $table->string('name');
-            $table->string('company_name');
-            $table->string('address');
+            $table->string('company');
             $table->string('email');
             $table->string('phone');
-            $table->string('fax');
-            $table->string('payment_method');
+            $table->string('address');
+            $table->string('address2');
+            $table->string('country');
+            $table->string('state');
+            $table->string('zipcode');
             $table->timestamps();
         });
     }

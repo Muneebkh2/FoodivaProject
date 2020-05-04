@@ -41,12 +41,12 @@ class ProductController extends Controller
             $product = new Product();
             $product->name = $name;
             $product->sku = json_encode($sku);
-            if ($request->hasFile('product_image')) {  //check the file present or not
-                $name = "product_image_".time().'_.'.$image->getClientOriginalExtension(); //get the  file extention
-                $destinationPath = public_path('/products/images'); //public path folder dir
-                $image->move($destinationPath, $name);  //mve to destination you mentioned 
-                $product->image = $name;
-            }
+            $name = "product_image_".time().'_.'.$image->getClientOriginalExtension(); //get the  file extention
+            $destinationPath = public_path('/products/images'); //public path folder dir
+            $image->move($destinationPath, $name);  //mve to destination you mentioned 
+            $product->image = $name;
+            // if ($request->hasFile('product_image')) {  //check the file present or not
+            // }
             $product->save();
             
             // update foriegn key .. 

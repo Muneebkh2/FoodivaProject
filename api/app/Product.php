@@ -23,6 +23,6 @@ class Product extends Model
 
     public function Order()
     {
-        return $this->hasOne('App\Order');
+        return $this->belongsToMany('App\Order');
     }
 }

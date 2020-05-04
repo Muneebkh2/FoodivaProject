@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Notifications\OrderCompleted;
 use App\Http\Controllers\Controller;
 use App\Order;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class OrderController extends Controller
 
     public function getAllOrders()
     {
-        $orders = Order::all();
+        $orders = Order::with('Product')->get();
         return response()->json($orders, $this->successStatus);
     }
 
@@ -25,49 +25,61 @@ class OrderController extends Controller
     public function createOrder(Request $request)
     {
         $this->validate($request, [
-            'order_title' => 'required|string',
-            'product_id' => 'required',
-            'quantity' => 'required',
-            'name' => 'required',
-            'company_name' => 'required',
-            'address' => 'required',
+            'firstname' => 'required|string',
+            'lastname' => 'required',
+            'company' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
-            'fax' => 'required',
-            'payment_method' => 'required'
+            'address' => 'required',
+            'address2' => 'required',
+            'country' => 'required',
+            'state' => 'required',
+            'zipcode'=>'required',
+            'products_id' => 'required',
+            // 'quantity' => 'required'
+
         ]);
 
         // var initalized..
-        $order_title = $request->input('order_title');
-        $product_id = $request->input('product_id');
-        $quantity = $request->input('quantity');
-        $name = $request->input('name');
-        $company_name = $request->input('company_name');
-        $address = $request->input('address');
+        $firstname = $request->input('firstname');
+        $lastname = $request->input('lastname');
+        $company = $request->input('company');
         $email = $request->input('email');
         $phone = $request->input('phone');
-        $fax = $request->input('fax');
-        $payment_method = $request->input('payment_method');
-
+        $address = $request->input('address');
+        $address2 = $request->input('address2');
+        $country = $request->input('country');
+        $state = $request->input('state');
+        $zipcode = $request->input('zipcode');
+        $products = $request->input('products_id');
+        // [$quantity] = $request->input('quantity');
+        $unique = 00000;
+        $order_no = $unique + 1; 
         try {
 
             $order = new Order();
-            $order->order_title = $order_title;
-            $order->product_id = $product_id;
-            $order->quantity = $quantity;
-            $order->name = $name;
-            $order->company_name = $email;
-            $order->address = $address;
+            $order->name = $firstname.' '.$lastname;
+            $order->company = $company;
             $order->email = $email;
             $order->phone = $phone;
-            $order->fax = $fax;
-            $order->payment_method = $payment_method;
+            $order->address = $address;
+            $order->address2 = $address2;
+            $order->country = $country;
+            $order->state = $state;
+            $order->zipcode = $zipcode;
+            $order->order_no = $order_no;
             $order->save();
+            
+            // update foriegn key .. 
+            foreach ($products as $key => $value) {
+                $order->Product()->attach($value['id'], ['quantity' => $value['quantity']]);
+            }
+            $order->notify(new OrderCompleted($order));
 
             return response()->json(['message' => 'New Order Created.'], $this->successStatus);
 
         } catch (\Throwable $th) {
-            return response()->json(['message' => 'Creating failed !'], 409);
+            return response()->json(['message' => 'Creating failed !'.$th], 409);
         }
     }
 
@@ -97,6 +109,7 @@ class OrderController extends Controller
         $phone = $request->input('phone');
         $fax = $request->input('fax');
         $payment_method = $request->input('payment_method');
+        $products = $request->input('products_id');
 
         try {
 
@@ -117,6 +130,8 @@ class OrderController extends Controller
                     'fax' => $fax,
                     'payment_method' => $payment_method,
                 ]);
+                // update foriegn key .. 
+                $order->Product()->attach($products);
 
                 return response()->json(['message' => 'Order Updated Succesfully.'], $this->successStatus);
             }
