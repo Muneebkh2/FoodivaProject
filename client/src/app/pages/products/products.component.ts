@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
     ngOnInit(): void { }
 
     getAllProducts() {
-        return this.api.getProducts().subscribe(
+        return this.api.getAllProducts().subscribe(
             (res: any) => {
                 console.log(res)
                 this.allProducts = res

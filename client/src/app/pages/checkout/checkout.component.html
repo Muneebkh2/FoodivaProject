@@ -1,0 +1,129 @@
+<section class="hero-heading">
+    <div class="container h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col text-center">
+                <h1>Checkout</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="main-content">
+    <div class="container">
+        <div class="row pt-5 pb-3">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="form_heading">Your cart</span>
+                    <span class="badge badge-custom badge-pill">{{ countCartProducts }}</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let cartItem of cartProducts">
+                        <div>
+                            <h6 class="my-0">{{cartItem.product.name}}</h6>
+                            <!-- <small class="text-muted text-right">Brief description</small> -->
+                            <small class="text-right">Quantity: {{cartItem.quantity}}</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-8">
+                <h4 class="mb-3 form_heading">Billing details</h4>
+                <form [formGroup]="checkoutForm" class="custom-form" (ngSubmit)="createOrder()">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">First name</label>
+                            <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': FC.firstname.touched && FC.firstname.invalid }" id="firstName" placeholder="" value="" required>
+                            <div *ngIf="FC.firstname.touched && FC.firstname.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.firstname.errors.required">Valid first name is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Last name</label>
+                            <input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': FC.lastname.touched && FC.lastname.invalid }" id="lastName" placeholder="" value="" required>
+                            <div *ngIf="FC.lastname.touched && FC.lastname.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.lastname.errors.required">Valid last name is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="compoany_name">Company Name</label>
+                        <input type="text" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': FC.company.touched && FC.company.invalid }" id="company_name" placeholder="Username" required>
+                        <div *ngIf="FC.company.touched && FC.company.invalid" class="invalid-feedback">
+                            <div *ngIf="FC.company.errors.required">company name is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': FC.email.touched && FC.email.invalid }" id="email" placeholder="you@example.com">
+                        <div *ngIf="FC.email.touched && FC.email.invalid" class="invalid-feedback">
+                            <div *ngIf="FC.email.errors.required">Please enter a valid email address for shipping updates.</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone">Phone</label>
+                        <input type="phone" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': FC.phone.touched && FC.phone.invalid }" id="phone" placeholder="+123 456 7890">
+                        <div *ngIf="FC.phone.touched && FC.phone.invalid" class="invalid-feedback">
+                            <div *ngIf="FC.phone.errors.required">Please enter a valid email address for shipping updates.</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': FC.address.touched && FC.address.invalid }" id="address" placeholder="1234 Main St" required>
+                        <div *ngIf="FC.address.touched && FC.address.invalid" class="invalid-feedback">
+                            <div *ngIf="FC.address.errors.required">Please enter your shipping address.</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                        <input type="text" formControlName="address2" class="form-control" id="address2" placeholder="Apartment or suite">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="country">Country</label>
+                            <select class="custom-select d-block w-100" id="country" formControlName="country" required>
+                                <option value="">Choose...</option>
+                                <option>United States</option>
+                            </select>
+                            <div *ngIf="FC.country.touched && FC.country.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.country.errors.required">Please select a valid country.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="state">State</label>
+                            <select class="custom-select d-block w-100" id="state" formControlName="state" required>
+                                <option value="">Choose...</option>
+                                <option>California</option>
+                            </select>
+                            <div *ngIf="FC.state.touched && FC.state.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.state.errors.required">Please select a valid state.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip">Zip</label>
+                            <input type="text" class="form-control" formControlName="zipcode" [ngClass]="{ 'is-invalid': FC.zipcode.touched && FC.zipcode.invalid }" id="zip" placeholder="" required>
+                            <div *ngIf="FC.zipcode.touched && FC.zipcode.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.zipcode.errors.required">Zip code required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+
+                    <div class="form-row">
+                        <div class="col">
+                            <p class="text-danger">** For Payment: when you submit this checkout after reciveing
+                                within 24 hours we will email invoice of your order.</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-custom btn-large my-5 w-100" [disabled]="!checkoutForm.valid"> Proceed To Checkout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -21,31 +21,46 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <form action="" class="contact-form">
+                <form [formGroup]="feedbackForm" (ngSubmit)="sendMessage()" class="contact-form">
                     <div class="form-row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <input type="text" name="fullname" id="" placeholder="name" class="form-control">
+                            <input type="text" name="name" id="name" formControlName="name" placeholder="name" class="form-control" required> 
+                            <div *ngIf="FC.name.touched && FC.name.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.name.errors.required">Name field is required.</div>
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="email" id="" placeholder="email" class="form-control">
+                            <input type="text" name="email" id="email" formControlName="email" placeholder="email" class="form-control" required>
+                            <div *ngIf="FC.email.touched && FC.email.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.email.errors.required">Email field is required.</div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <input type="text" name="phone" id="" placeholder="phone" class="form-control">
+                            <input type="text" name="phone" id="phone" formControlName="phone" placeholder="phone" class="form-control" required>
+                            <div *ngIf="FC.phone.touched && FC.phone.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.phone.errors.required">Phone field is required.</div>
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="address" id="" placeholder="address" class="form-control">
+                            <input type="text" name="address" id="address" formControlName="address" placeholder="address" class="form-control" required>
+                            <div *ngIf="FC.address.touched && FC.address.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.address.errors.required">Address field is required.</div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col">
-                            <textarea name="message" id="" rows="10" class="form-control"
-                                placeholder="enter your message.."></textarea>
+                            <textarea name="message" id="message" formControlName="message" rows="10" class="form-control"
+                                placeholder="enter your message.." required></textarea>
+                                <div *ngIf="FC.message.touched && FC.message.invalid" class="invalid-feedback">
+                                    <div *ngIf="FC.message.errors.required">Message field is required.</div>
+                                </div>
                         </div>
                     </div>
                     <div class="text-center my-5">
-                        <button type="submit" class="btn btn-custom btn-large"> Submit </button>
+                        <button type="submit" class="btn btn-custom btn-large" [disabled]="!feedbackForm.valid"> Send Message </button>
                     </div>
                 </form>
             </div>

@@ -66,11 +66,17 @@ export class RestApiService {
     createOrders(body) {
         return this.http.post(this.apiURL + 'orders/create', body);
     }
-    updateOrders(id, body) {
-        return this.http.put(this.apiURL + 'orders/edit/' + id, body);
-    }
     deleteOrders(id) {
         return this.http.delete(this.apiURL + 'orders/delete/' + id);
+    }
+    /* 
+    * *** 
+    * Contact / Feedback
+    * End points method
+    * **********
+    */
+    sendConatctFormQuery(body){
+        return this.http.post(this.apiURL + 'sendWebQuery', body);
     }
 
 }

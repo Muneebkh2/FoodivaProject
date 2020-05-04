@@ -39,7 +39,7 @@
         <div class="row pb-5">
             <div class="col-lg-12 text-right">
                 <a class="text-link mr-2" (click)="clearCart()"><i class="far fa-times ml-1"></i> clear cart</a>
-                <button class="btn btn-custom" [disabled]="disable_It">Go to Checkout <i class="far fa-share-all ml-1"></i></button>
+                <button class="btn btn-custom" [disabled]="disable_It" [routerLink]="[ '/checkout']">Go to Checkout <i class="far fa-share-all ml-1"></i></button>
             </div>
         </div>
     </div>

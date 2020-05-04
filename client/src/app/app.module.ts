@@ -11,6 +11,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ThankyouComponent } from './pages/thankyou/thankyou.component';
 // Importing libraries 
 import { OwlModule } from 'ngx-owl-carousel';
 import { bootstrap } from "bootstrap";
@@ -25,6 +26,7 @@ import { AllProductsComponent } from './pages/admin/products/all-products/all-pr
 import { AddProductsComponent } from './pages/admin/products/add-products/add-products.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
 import { AllCategoryComponent } from './pages/admin/categories/all-category/all-category.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 // import { NZ_I18N } from 'ng-zorro-antd/i18n';
@@ -50,7 +52,9 @@ registerLocaleData(en);
         AllProductsComponent,
         AddProductsComponent,
         AddCategoryComponent,
-        AllCategoryComponent
+        AllCategoryComponent,
+        CheckoutComponent,
+        ThankyouComponent
     ],
     imports: [
         BrowserModule,

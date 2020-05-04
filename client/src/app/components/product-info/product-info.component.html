@@ -11,24 +11,12 @@
                 pharetra integer, pretium mus iaculis suspendisse suscipit vel.
             </p>
 
-            <div class="accordion" id="accordionExample">
-                <div class="card border-0">
-                    <div class="card-header p-0 bg-transparent border-0" id="headingOne" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <!-- <h2 class="mb-0 class product__modal__title">
-                             Order a product
-                        </h2> -->
-                        <div class="col-12 py-2 px-1">
-                            <button type="button" class="col btn btn-outline-danger btn-custom" (click)="addToCart()">Add to
-                                cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <input type="number" name="quantity" id="quantity" class="custom-form-control mb-2" min="0" max={{productStock}} (change)="changeQTY()" [(ngModel)]="quantity">
+            <button type="button" class="col btn btn-outline-danger btn-custom rounded" (click)="addToCart()" [disabled]="disableCartBTN">Add to
+                cart</button>
         </div>
     </div>
     <div class="col-6">
-        <img src="../../../../../api/public/products/images/{{ productDetails.image }}" class="img-fluid">
+        <img src="{{ photoURL + productDetails.image }}" class="img-fluid">
     </div>
 </div>

@@ -18,9 +18,10 @@
                 </div>
                 <div class="form-group">
                     <label for="product_category">Select Category</label>
-                    <select class="form-control" id="product_category" class="custom-select" formControlName="category" [ngClass]="{ 'is-invalid': FC.category.touched && FC.category.invalid }" required>
-                        <option>Category 1</option>
-                        <option>Category 2</option>
+                    <select class="form-control" id="product_category" class="custom-select" formControlName="category" 
+                    [ngClass]="{ 'is-invalid': FC.category.touched && FC.category.invalid }" required placeholder="asd"> 
+                        <option [ngValue]="null" disabled>Choose any category</option>
+                        <option *ngFor="let category of allCategories" value={{category.id}}> {{ category.name }} </option>
                     </select>
                     <div *ngIf="FC.category.touched && FC.category.invalid" class="invalid-feedback">
                         <div *ngIf="FC.category.errors.required">Please select one of the category.</div>
@@ -29,7 +30,7 @@
                 <div class="form-groups">
                     <label for="product_category">Select Images</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="product_image" formControlName="image" [ngClass]="{ 'is-invalid': FC.image.touched && FC.image.invalid }" required>
+                        <input type="file" class="custom-file-input" id="product_image" formControlName="image" [ngClass]="{ 'is-invalid': FC.image.touched && FC.image.invalid }" (change)="onFileChange($event)" required>
                         <label class="custom-file-label" for="product_image" data-browse="Browse Images">Choose files</label>
                         <!-- <div class="invalid-feedback">Example invalid custom file feedback</div> -->
                         <div *ngIf="FC.image.touched && FC.image.invalid" class="invalid-feedback">
@@ -37,6 +38,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- <div class="form-group">
+                    <label for="product_name">Product Description <small>(optional)</small></label>
+                    <textarea name="description" id="description" rows="8" formControlName="description" placeholder="add product description here ..." class="form-control"></textarea>
+                </div> -->
                 <button class="btn btn-sm btn-custom-form mt-3" type="submit" [disabled]="!productForm.valid">Add</button>
             </form>
         </div>

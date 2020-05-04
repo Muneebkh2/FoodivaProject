@@ -6,6 +6,8 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ThankyouComponent } from './pages/thankyou/thankyou.component';
 // admin routes
 import { AuthComponent } from './pages/admin/auth/auth.component';
 import { AllProductsComponent } from './pages/admin/products/all-products/all-products.component';
@@ -20,6 +22,8 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent},
     { path: 'brands', component: BrandsComponent},
     { path: 'cart', component: CartComponent},
+    { path: 'checkout', component: CheckoutComponent},
+    { path: 'thank-you-for-order', component: ThankyouComponent},
     // admin routes
     { path: 'admin/login', component: AuthComponent},
     { path: 'admin/products/all', component: AllProductsComponent},

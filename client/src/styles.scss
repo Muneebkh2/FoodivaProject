@@ -104,9 +104,9 @@ form.custom-form {
     padding: 20px;
 }
 form.custom-form .form-control,
-form.custom-form  .custom-select,
+form.custom-form .custom-select,
 form.custom-form .custom-file-input,
-form.custom-form  .custom-file-label,
+form.custom-form .custom-file-label,
 form.custom-form .custom-file-label::after
 {
     height: auto;
@@ -128,4 +128,48 @@ form.custom-form .btn-custom-form:hover{
 }
 .modal-backdrop{
     width: auto!important;
+}
+// checkout form
+.badge-custom {
+    color: #fff;
+    background-color: #960202;
+}
+.form_heading{
+    font-size: 24px;
+    font-weight: 600;
+    color: #960202;
+}
+.list-group-item h6 {
+    color: #960202;
+}
+form .form-control,
+form .custom-select,
+form .custom-file-input,
+form .custom-file-label,
+form .custom-file-label::after,
+.custom-form-control
+{
+    height: auto;
+    padding: .2rem 0.75rem;
+    border-color: #960202;
+    border-radius: .25em!important;
+}
+form label {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #6c757d;
+}
+li.list-group-item.d-flex.justify-content-between.lh-condensed {
+    border-color: #960202;
+}
+.ant-notification{
+    z-index: 1580!important;
+}
+.modal{
+    z-index: 980!important;
+}
+.btn-custom:disabled:hover{
+    background-color: #960202!important;
+    color: #fff!important;
 }

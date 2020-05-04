@@ -11,6 +11,8 @@ Route::group(['middleware' => 'auth:api'], function () {
 
 // get-Products
 Route::get('getproducts', 'Api\CategoryController@getproducts');
+// ContactForm Email Route >>
+Route::post('sendWebQuery', 'Api\UserController@ContactForm');
 
 // Category Routes >>>
 Route::get('category/all', 'Api\CategoryController@getAllCategories');
