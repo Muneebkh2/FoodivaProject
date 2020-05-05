@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { id_ID } from 'ng-zorro-antd';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TokenService } from './token.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class RestApiService {
 
-    host = 'http://127.0.0.1:8000/';
+    // APP Host URL
+    host = 'https://foodivausa.com/api/public/';
     apiURL = this.host + 'api/';
+    
+    // API Token headers
+    httpOptions = new HttpHeaders({
+        Authorization: 'Bearer ' + this._storage.retrieve()
+    });
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private _storage: TokenService) { }
 
     /* 
     * *** 
