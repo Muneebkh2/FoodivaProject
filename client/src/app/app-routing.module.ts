@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from "./guards/auth-guard.service";
+import { RoleGuardService } from "./guards/role-guard.service";
+// pages start
 import { IndexComponent } from './pages/index/index.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProductsComponent } from './pages/products/products.component';
@@ -14,6 +17,9 @@ import { AllProductsComponent } from './pages/admin/products/all-products/all-pr
 import { AddProductsComponent } from './pages/admin/products/add-products/add-products.component';
 import { AllCategoryComponent } from './pages/admin/categories/all-category/all-category.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
+import { AllOrdersComponent } from './pages/admin/orders/all-orders/all-orders.component';
+import { SettingsComponent } from './pages/admin/settings/settings.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 const routes: Routes = [
     { path: '', component: IndexComponent },
@@ -26,11 +32,13 @@ const routes: Routes = [
     { path: 'thank-you-for-order', component: ThankyouComponent},
     // admin routes
     { path: 'admin/login', component: AuthComponent},
-    { path: 'admin/products/all', component: AllProductsComponent},
-    { path: 'admin/products/add', component: AddProductsComponent},
-    { path: 'admin/category/all', component: AllCategoryComponent},
-    { path: 'admin/category/add', component: AddCategoryComponent},
-    // { path: 'admin/login', component: AuthComponent},
+    { path: 'admin/products/all', component: AllProductsComponent, canActivate: [AuthGuardService] },
+    { path: 'admin/products/add', component: AddProductsComponent, canActivate: [AuthGuardService] },
+    { path: 'admin/category/all', component: AllCategoryComponent, canActivate: [AuthGuardService] },
+    { path: 'admin/category/add', component: AddCategoryComponent, canActivate: [AuthGuardService] },
+    { path: 'admin/orders/all', component: AllOrdersComponent, canActivate: [AuthGuardService] },
+    { path: 'admin/settings', component: SettingsComponent, canActivate: [AuthGuardService] },
+    { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 d-lg-flex">
-                <ul class="ml-auto">
+                <ul class="ml-auto p-0 text-center text-md-auto">
                     <li>
                         <a href="mailto:info@foodivausa.com">
                             info@foodivausa.com
@@ -20,17 +20,23 @@
     </div>
 </section>
 <header class="navigation-header shadow-sm">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light" style="padding: unset !important;">
-            <a class="navbar-brand" href="#" style="padding: unset !important;">
+    <div class="container mobile_nav_menu">
+        <nav class="navbar navbar-expand-lg navbar-light p-0 p-lg-2">
+            <a class="navbar-brand col-7 col-lg" href="#">
                 <img src="assets/images/logo.png" class="w-50">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <!-- <button class="navbar-toggler pr-2 pr-lg-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
                         <a routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">

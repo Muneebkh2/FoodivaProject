@@ -22,11 +22,16 @@ import { ProductInfoComponent } from './components/product-info/product-info.com
 import { CartComponent } from './pages/cart/cart.component';
 // admin routes
 import { AuthComponent } from './pages/admin/auth/auth.component';
+import { SidebarComponent } from './pages/admin/component/sidebar/sidebar.component';
 import { AllProductsComponent } from './pages/admin/products/all-products/all-products.component';
 import { AddProductsComponent } from './pages/admin/products/add-products/add-products.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
 import { AllCategoryComponent } from './pages/admin/categories/all-category/all-category.component';
+import { AllOrdersComponent } from './pages/admin/orders/all-orders/all-orders.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { SettingsComponent } from './pages/admin/settings/settings.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+// modules start >>>
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 // import { NZ_I18N } from 'ng-zorro-antd/i18n';
@@ -54,7 +59,11 @@ registerLocaleData(en);
         AddCategoryComponent,
         AllCategoryComponent,
         CheckoutComponent,
-        ThankyouComponent
+        ThankyouComponent,
+        SidebarComponent,
+        AllOrdersComponent,
+        SettingsComponent,
+        DashboardComponent
     ],
     imports: [
         BrowserModule,

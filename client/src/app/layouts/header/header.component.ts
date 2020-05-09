@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+
 declare interface RouteInfo {
     path: string
     title: string
@@ -33,6 +35,11 @@ export class HeaderComponent implements OnInit {
         if (cart != null) {
             this.countCartProducts = cart.length
         }
+        $(document).ready(function () {
+            $(".navbar-toggler").on("click", function () {
+                  $(this).toggleClass("active");
+            });
+        });
     }
 
     main__menu(): void {

@@ -43,7 +43,8 @@ export class IndexComponent implements OnInit {
         items: 5,
         responsive: {
             0: {
-                items: 1
+                items: 1,
+                nav: false,
             },
             600: {
                 items: 2
@@ -64,7 +65,8 @@ export class IndexComponent implements OnInit {
         items: 3,
         responsive: {
             0: {
-                items: 1
+                items: 1,
+                nav: false,
             },
             600: {
                 items: 2

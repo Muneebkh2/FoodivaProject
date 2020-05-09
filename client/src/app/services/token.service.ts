@@ -99,7 +99,7 @@ export class TokenService {
     public logout() {
         localStorage.removeItem(this.tokenKey);
         localStorage.clear();
-        this._router.navigate(['/login']);
+        this._router.navigate(['/admin/login']);
     }
 
     public delete() {

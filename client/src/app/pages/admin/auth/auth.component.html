@@ -2,29 +2,50 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mx-auto">
-                <form class="auth__form p-lg-5 p-2 shadow">
-                    <div class="form-title mb-5">
+                <form class="auth__form p-lg-5 p-4 shadow" [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="form-title mb-lg-5 mb-3">
                         <h2>Sign In</h2>
                         <p>Enter your credientials to begin the panel</p>
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9 my-auto">
-                            <input type="email" class="form-control" id="inputEmail3">
+                            <input type="email" class="form-control" id="inputEmail3" formControlName="email" [ngClass]="{ 'is-invalid': FC.email.touched && FC.email.invalid }" required>
+                            <div *ngIf="FC.email.touched && FC.email.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.email.errors.required">email is required.</div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
                         <div class="col-sm-9 my-auto">
-                            <input type="password" class="form-control" id="inputPassword3">
+                            <input type="password" class="form-control" id="inputPassword3" formControlName="password" [ngClass]="{ 'is-invalid': FC.password.touched && FC.password.invalid }" required>
+                            <div *ngIf="FC.password.touched && FC.password.invalid" class="invalid-feedback">
+                                <div *ngIf="FC.password.errors.required">password is required.</div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="offset-md-3 col-sm-9 mt-lg-3">
-                            <button type="submit" class="btn btn-form">Sign in</button>
+                            <button type="submit" class="btn btn-form" [disabled]="!loginForm.valid || submitted">
+                                <span [class.d-none]="submitted">
+                                    Sign in
+                                </span>
+                                <span [class.d-none]="!submitted">
+                                    Signing in&nbsp;<i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </form>
+                <ng-container *ngIf="errorMessage">
+                    <div class="alert alert-danger mt-3 border-0" *ngIf="errorMessage">
+                        <strong>Error!</strong> {{errorMessage}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>

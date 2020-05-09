@@ -1,3 +1,7 @@
+.btn-outline-primary {
+    color: #007bff!important;
+    border-color: #007bff;
+}
 /* You can add global styles to this file, and also import other style files */
 .category_title{
     margin-bottom: 25px;
@@ -172,4 +176,289 @@ li.list-group-item.d-flex.justify-content-between.lh-condensed {
 .btn-custom:disabled:hover{
     background-color: #960202!important;
     color: #fff!important;
+}
+.heading_admin_pages{
+    color: #960202;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+h2.subheading_admin_pages {
+    color: #960202;
+    font-size: 20px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    /* text-decoration: underline; */
+    /* text-underline-position: under; */
+}
+.db_card {
+    border: 1px solid #960202!important;
+}
+.db_card_heading{
+    color: #960202;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+.db_card_span{
+    font-size: 26px;
+    font-weight: 600;
+    font-family: "Lora", sans-serif;
+}
+.icon {
+    padding: 8px 10px;
+}
+.icon i{
+    font-size: 18px;
+}
+.order-modal .modal-title{
+    font-family: 'Montserrat', sans-serif;
+}
+.order-modal .modal-body .card-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #960202;
+}
+.order-modal .modal-body h4{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 10px 0px;
+    text-decoration: underline;
+    text-underline-position: under;
+    color: #960202;
+}
+footer address ul li:nth-child(1)::before{
+    content: "\f879";
+}
+footer address ul li:nth-child(2)::before{
+    content: "\f0e0";
+}
+footer address ul li::before{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: lighter;
+    color: #ffffff;
+    padding: 0px 5px 0px 0px;
+}
+@media(max-width: 767px){
+
+    .product__details h3{
+        font-size: 18px;
+    }
+    .product__details p {
+        font-size: 14px;
+    }
+
+    section.formSection {
+        form.auth__form{
+            .form-title{
+                h2{font-size: 18px!important;}
+                p{font-size: 10px!important;}
+            }
+            label{font-size: 14px!important;}
+        } 
+    }
+
+    .heading_admin_pages{
+        font-size: 20px;
+    }
+    h2.subheading_admin_pages{
+        font-size: 16px;
+    }
+    .db_card_heading{
+        font-size: 12px;
+    }
+    .db_card_span{
+        font-size: 18px;
+    }
+
+
+
+    footer address ul li::before{
+        font-size: 12px;
+        margin-right: 10px;
+    }
+    .search_box {
+        font-size: 12px;
+        padding: 3px 19px;
+    }
+    .category_title{
+        font-size: 14px;
+    }
+    .product__card > a >.product__title{
+        font-size: 12px;
+    }
+    .item h4{
+        font-size: 14px;
+    }
+    .feature_products_section h6.subtitle{
+        margin-left: 0px!important;
+    }
+    .hero-heading{
+        height: 80px;
+    }
+    .hero-heading h1{
+        font-size: 24px;
+    }
+    .font-24{
+        font-size: 1rem;
+    }
+    .TopBar ul li a,
+    .TopBar ul li::before{
+        font-size: 12px;
+    }
+    .footer-top p{
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .newsletter_btn{
+        height: 26px!important;
+        padding: 0px 5px!important;
+    }
+    .newsletter_field{
+        height: 26px!important;
+    }
+    .footer-main h2{
+        font-size: 14px;
+    }
+    .menu ul.footer-nav li a,
+    .footer-main address ul li a,
+    .footer-main p{
+        font-size: 10px;
+        line-height: 18px;
+    }
+    .footer-main .footer-bottom p{
+        font-size: 8px;
+    }
+
+    ul.navbar-nav li.nav-item a.active, ul.navbar-nav li.nav-item a:hover{
+        border-bottom: 1px solid #960202!important;
+    }
+    .ant-table table{
+        width: max-content;
+    }
+    #sidebar{
+        width: 100%;
+        border-left: 1px solid #960202!important;
+        margin-bottom: 30px;
+    }
+    
+    div.container.mobile_nav_menu{
+        padding: 0px!important;
+    }
+    .navbar{
+        height: 60px;
+    }
+    .navbar-brand{
+        position: absolute;
+        padding: 0px 10px!Important;
+        img{
+            width: 75%!important;
+            height: 30px;        
+        }
+    }
+    ul.navbar-nav.ml-auto {
+        background: #ffffff;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+        display: block;
+    }
+    .navbar-collapse{
+        display: block;
+        position: absolute!important;
+        width: 100%!important;
+        // top: 72px;
+        top: 60px;
+        border-top: 2px solid #960202;
+    }
+    .navbar-toggler:focus, .navbar-toggler:hover{
+        outline: none;
+    }
+    .navbar-toggler .icon-bar:nth-of-type(2) {
+        top: 1px;
+    }
+    
+    .navbar-toggler .icon-bar:nth-of-type(3) {
+        top: 2px;
+    }
+    
+    .navbar-toggler .icon-bar {
+        position: relative;
+        transition: all 500ms ease-in-out;
+    }
+    
+    .navbar-toggler.active .icon-bar:nth-of-type(1) {
+        top: 6px;
+        transform: rotate(45deg);
+    }
+    
+    .navbar-toggler.active .icon-bar:nth-of-type(2) {
+        background-color: transparent;
+    }
+    
+    .navbar-toggler.active .icon-bar:nth-of-type(3) {
+        top: -6px;
+        transform: rotate(-45deg);
+    }
+    .navbar-toggler .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+        margin: 4px 0px 4px 0px;
+        background-color: #960202;
+    }
+    button.navbar-toggler{
+        background-color: transparent;
+        border: 2px solid #960202!important;
+        z-index: 22;
+        position: absolute;
+        left: auto;
+        right: 25px;
+        border-radius: 0px;
+        padding: 5px 10px;
+        // top: 20px;
+        top: 14px;
+    }
+    // slider
+    #hero{
+        height: 300px;
+        background-attachment: fixed;
+        background-position: -105px 16px;
+        background-size: cover;
+    }
+    #hero h1{
+        font-size: 24px;
+    }
+    #hero p{
+        font-size: 12px;
+    }
+    h1.section_title,
+    .image_section .content h1
+    {
+        font-size: 18px;
+    }
+    p.para,
+    .feature_products_section h6.subtitle
+    {
+        font-size: 14px;
+    }
+    .feature_products_section h1.title{
+        font-size: 20px;
+    }
+    .image_section{
+        height: 300px;
+        background-attachment: fixed;
+        background-position: -105px 16px;
+        background-size: cover;
+    }
+    .image_section .content{
+        margin-top: 100px;
+    }
 }

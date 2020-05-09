@@ -33,7 +33,7 @@ export class AllProductsComponent implements OnInit {
     }
 
     getAllProducts(){
-        return this.server.getAllProducts().subscribe(
+        return this.server.productsAll().subscribe(
             (res:any) => {
                 this.productsData = res
             },

@@ -25,6 +25,10 @@ Route::get('orders/id/{id}', 'Api\OrderController@getOrdersById');
 
 // Authenticated routes for admin panel...
 Route::group(['middleware' => 'auth:api'], function () {
+    // Dashboard Routes >>>
+    Route::get('dashboard/counts', 'Api\DashboardController@getCounts');
+    Route::get('dashboard/orders', 'Api\DashboardController@newOrders');
+
     // Category Routes >>>
     Route::post('category/create', 'Api\CategoryController@createCategory');
     Route::put('category/edit/{id}', 'Api\CategoryController@updateCategory');

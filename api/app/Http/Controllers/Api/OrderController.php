@@ -12,7 +12,7 @@ class OrderController extends Controller
 
     public function getAllOrders()
     {
-        $orders = Order::with('Product')->get();
+        $orders = Order::with('Product')->orderBy('created_at', 'desc')->get();
         return response()->json($orders, $this->successStatus);
     }
 

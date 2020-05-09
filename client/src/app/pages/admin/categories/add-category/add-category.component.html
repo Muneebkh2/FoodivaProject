@@ -1,30 +1,33 @@
-<section class="heading pt-5">
+<section class="data_section py-5">
     <div class="container">
-        <div class="col-lg-12">
-            <h2>Add New Category</h2>
-        </div>
-    </div>
-</section>
-<section class="data_section">
-    <div class="container">
-        <div class="col-lg-8 py-5">
-            <form [formGroup]="categoryForm" class="custom-form" (ngSubmit)="addCategory()">
-                <div class="form-group">
-                    <label for="product_name">Category Name</label>
-                    <input type="email" id="name" formControlName="name" placeholder="Like: Masalah ..." class="form-control" [ngClass]="{ 'is-invalid': FC.name.touched && FC.name.invalid }" required>
-                    <div *ngIf="FC.name.touched && FC.name.invalid" class="invalid-feedback">
-                        <div *ngIf="FC.name.errors.required">Category name is required.</div>
+        <div class="row">
+            <div class="col-lg-3">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-lg-9 py-5">
+                <div class="row mb-3">
+                    <div class="col-lg-7">
+                        <h2 class="heading_admin_pages">Add New Category</h2>
                     </div>
                 </div>
-                <div class="form-groups">
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description" rows="4" formControlName="description" class="form-control" placeholder="enter description here..."></textarea>
-                    <!-- <div *ngIf="FC.description.touched && FC.description.invalid" class="invalid-feedback">
-                        <div *ngIf="FC.description.errors.required">Category descriprion is required.</div>
-                    </div> -->
-                </div>
-                <button class="btn btn-sm btn-custom-form mt-3" type="submit" [disabled]="!categoryForm.valid">Add</button>
-            </form>
+                <form [formGroup]="categoryForm" class="custom-form" (ngSubmit)="addCategory()">
+                    <div class="form-group">
+                        <label for="product_name">Category Name</label>
+                        <input type="email" id="name" formControlName="name" placeholder="Like: Masalah ..." class="form-control" [ngClass]="{ 'is-invalid': FC.name.touched && FC.name.invalid }" required>
+                        <div *ngIf="FC.name.touched && FC.name.invalid" class="invalid-feedback">
+                            <div *ngIf="FC.name.errors.required">Category name is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-groups">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" rows="4" formControlName="description" class="form-control" placeholder="enter description here..."></textarea>
+                        <!-- <div *ngIf="FC.description.touched && FC.description.invalid" class="invalid-feedback">
+                            <div *ngIf="FC.description.errors.required">Category descriprion is required.</div>
+                        </div> -->
+                    </div>
+                    <button class="btn btn-sm btn-custom-form mt-3" type="submit" [disabled]="!categoryForm.valid">Add</button>
+                </form>
+            </div>
         </div>
     </div>
 </section>

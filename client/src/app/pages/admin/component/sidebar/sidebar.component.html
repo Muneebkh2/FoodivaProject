@@ -1,0 +1,65 @@
+<nav id="sidebar">
+    <div class="p-3 d-none">
+        <h5 class="sidemenu_heading">Menu</h5>
+        <ul class="list-unstyled components mt-3">
+            <li>
+                <a [routerLink]="[ '/admin/dashboard']"><span class="fal fa-home mx-2"></span>Dashboard</a>
+            </li>
+            <li>
+                <a data-toggle="collapse" class="dropdown-toggle" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"><span class="fal fa-album-collection mx-2"></span>Categories</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu1" [ngClass]="{ 'show': isCollapsed }">
+                    <li><a [routerLink]="[ '/admin/category/all']"><span class="fas fa-caret-right mx-2"></span> All Categories</a></li>
+                    <li><a [routerLink]="[ '/admin/category/add']"><span class="fas fa-caret-right mx-2"></span> Add Category</a></li>
+                </ul>
+            </li>
+            <li>
+                <a data-toggle="collapse" class="dropdown-toggle" (click)="isCollapsed1 = !isCollapsed1" [attr.aria-expanded]="!isCollapsed1"><span class="fal fa-box mx-2"></span>Products</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu2" [ngClass]="{ 'show': isCollapsed1 }">
+                    <li><a [routerLink]="[ '/admin//products/all']"><span class="fas fa-caret-right mx-2"></span> All Products</a></li>
+                    <li><a [routerLink]="[ '/admin/products/add']"><span class="fas fa-caret-right mx-2"></span> Add Product</a></li>
+                </ul>
+            </li>
+            <li>
+                <a [routerLink]="[ '/admin/orders/all']"><span class="fal fa-clipboard-list mx-2"></span>Orders</a>
+            </li>
+            <li>
+                <a [routerLink]="[ '/admin/settings']"><span class="fal fa-cog mx-2"></span>Settings</a>
+            </li>
+        </ul>
+        <button class="btn btn-sm btn-danger" (click)="signout()"><span class="fal fa-sign-out mr-2"></span>logout</button>
+    </div>
+    <button class="btn btn-sm btn-danger w-100" type="button" 
+        data-toggle="collapse" data-target="#sidemenu"
+        aria-expanded="false" aria-controls="sidemenu">
+        Open Menu
+    </button>
+    <div class="p-3 d-lg-none collapse" id="sidemenu">
+        <!-- <h5 class="sidemenu_heading">Menu</h5> -->
+        <ul class="list-unstyled components mt-3">
+            <li>
+                <a [routerLink]="[ '/admin/dashboard']"><span class="fal fa-home mx-2"></span>Dashboard</a>
+            </li>
+            <li>
+                <a data-toggle="collapse" class="dropdown-toggle" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"><span class="fal fa-album-collection mx-2"></span>Categories</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu1" [ngClass]="{ 'show': isCollapsed }">
+                    <li><a [routerLink]="[ '/admin/category/all']"><span class="fas fa-caret-right mx-2"></span> All Categories</a></li>
+                    <li><a [routerLink]="[ '/admin/category/add']"><span class="fas fa-caret-right mx-2"></span> Add Category</a></li>
+                </ul>
+            </li>
+            <li>
+                <a data-toggle="collapse" class="dropdown-toggle" (click)="isCollapsed1 = !isCollapsed1" [attr.aria-expanded]="!isCollapsed1"><span class="fal fa-box mx-2"></span>Products</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu2" [ngClass]="{ 'show': isCollapsed1 }">
+                    <li><a [routerLink]="[ '/admin//products/all']"><span class="fas fa-caret-right mx-2"></span> All Products</a></li>
+                    <li><a [routerLink]="[ '/admin/products/add']"><span class="fas fa-caret-right mx-2"></span> Add Product</a></li>
+                </ul>
+            </li>
+            <li>
+                <a [routerLink]="[ '/admin/orders/all']"><span class="fal fa-clipboard-list mx-2"></span>Orders</a>
+            </li>
+            <li>
+                <a [routerLink]="[ '/admin/settings']"><span class="fal fa-cog mx-2"></span>Settings</a>
+            </li>
+        </ul>
+        <button class="btn btn-sm btn-danger" (click)="signout()"><span class="fal fa-sign-out mr-2"></span>logout</button>
+    </div>
+</nav>
