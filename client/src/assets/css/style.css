@@ -447,9 +447,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brands_section .brandCarousel .card img {
-    padding: 20px;
+    /* padding: 20px; */
+    /* padding: 20px 55px;
+    margin: auto;
+    height: 90%; */
+    padding: 20px 0px;
     margin: auto;
     height: 90%;
+    width: 170px;
 }
 
 .brands-card {

@@ -9,11 +9,11 @@ declare interface RouteInfo {
 }
 
 export const navbarROUTES: RouteInfo[] = [
-    { path: '', title: 'Home', class: 'nav-item' },
-    { path: '/brands', title: 'Brand', class: 'nav-item' },
-    { path: '/products', title: 'Products', class: 'nav-item' },
-    { path: '/about', title: 'About Us', class: 'nav-item' },
-    { path: '/contact', title: 'Contact Us', class: 'nav-item' },
+    { path: '/', title: 'Home', class: 'nav-link' },
+    { path: '/brands', title: 'Brand', class: 'nav-link' },
+    { path: '/products', title: 'Products', class: 'nav-link' },
+    { path: '/about', title: 'About Us', class: 'nav-link' },
+    { path: '/contact', title: 'Contact Us', class: 'nav-link' },
 ];
 
 @Component({
@@ -39,6 +39,12 @@ export class HeaderComponent implements OnInit {
             $(".navbar-toggler").on("click", function () {
                   $(this).toggleClass("active");
             });
+        });
+        // hide menu on click 
+        $('.navbar-nav>li').on('click', function(){
+            $('.navbar-collapse').collapse('show');
+            $(".navbar-toggler").toggleClass("active");
+            $(".navbar-toggler").toggleClass("collapsed");
         });
     }
 

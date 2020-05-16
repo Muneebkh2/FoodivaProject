@@ -33,13 +33,13 @@ export class AuthComponent implements OnInit {
         this.submitted = true
         
         let body = this.loginForm.value
-        // console.log(body);
         
         return this.server.login(body).subscribe(
             (res:any) => {
                 this.storage.store(res.success.token, res.user.is_admin, res.user.email, res.user.name, res.user.id);
-                this.submitted = false; // reset flag to display spinne
-                if (this.storage.retrieveUserRole() === 1) {
+                this.submitted = false; // reset flag to display spinner
+                
+                if (this.storage.retrieveUserRole() == 1) {
                     this.router.navigate(['admin/dashboard']);
                 }else{
                     this.submitted = false // reset flag to display spinner

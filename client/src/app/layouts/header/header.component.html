@@ -21,9 +21,9 @@
 </section>
 <header class="navigation-header shadow-sm">
     <div class="container mobile_nav_menu">
-        <nav class="navbar navbar-expand-lg navbar-light p-0 p-lg-2">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
             <a class="navbar-brand col-7 col-lg" href="#">
-                <img src="assets/images/logo.png" class="w-50">
+                <img src="assets/images/logo.png">
             </a>
             <!-- <button class="navbar-toggler pr-2 pr-lg-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,8 +38,8 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-                        <a routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">
+                    <li *ngFor="let menuItem of menuItems" class="nav-item">
+                        <a [routerLink]="[menuItem.path]" class="{{menuItem.class}}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="collapse" data-target=".navbar-collapse.show">
                             {{ menuItem.title }}
                         </a>
                     </li>

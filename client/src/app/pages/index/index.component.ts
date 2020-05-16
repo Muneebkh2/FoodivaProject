@@ -67,9 +67,13 @@ export class IndexComponent implements OnInit {
             0: {
                 items: 1,
                 nav: false,
+                autoplay: true,
+                loop: true,
             },
             600: {
-                items: 2
+                items: 2,
+                autoplay: true,
+                loop: true,
             },
             1000: {
                 items: 3

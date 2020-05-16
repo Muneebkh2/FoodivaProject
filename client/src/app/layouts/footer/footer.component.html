@@ -22,7 +22,7 @@
                 <div class="col-lg-3 col-6">
                     <h2 class="mb-lg-4 mb-2">Products</h2>
                     <div class="menu">
-                        <ul class="footer-nav d-none">
+                        <ul class="footer-nav d-none d-lg-block">
                             <li><a href="/product-category/tandoor-oven">Tandoor Oven</a></li>
                             <li><a href="/product-category/spices">Spices</a></li>
                             <li><a href="/product-category/dried-fruits-nuts">Dried-Fruits /
@@ -46,11 +46,11 @@
                     <h2 class="mb-lg-4 mb-2">Quick Links</h2>
                     <div class="menu">
                         <ul class="footer-nav">
-                            <li><a href="">Home</a></li>
-                            <li><a href="/about-us">About us</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About us</a></li>
                             <li><a href="/brands">Brands</a></li>
-                            <li><a href="/contact-us">Contact us</a></li>
-                            <li><a href="/terms-condition">Terms & Condition</a></li>
+                            <li><a href="/contact">Contact us</a></li>
+                            <li><a [routerLink]="['/terms-condition']">Terms & Condition</a></li>
                         </ul>
                     </div>
                 </div>
@@ -63,13 +63,13 @@
                         </ul>
                     </address>
                 </div>
-                <div class="col-lg-4 d-none">
+                <div class="col-lg-4 d-none d-lg-block">
                     <h2 class="mb-lg-4 mb-2">Our Company</h2>
                     <p>
                         we are passionate on our believes that
                         quality and affordable grocery distribution should be available for everyone.
                     </p>
-                    <img src="/assets/images/logo.png" alt="">
+                    <img src="/assets/images/logo.png" alt="Foodiva USA LLC">
                 </div>
             </div>
             <!-- copyright footer row -->

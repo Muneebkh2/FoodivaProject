@@ -10,7 +10,7 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9 my-auto">
-                            <input type="email" class="form-control" id="inputEmail3" formControlName="email" [ngClass]="{ 'is-invalid': FC.email.touched && FC.email.invalid }" required>
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="enter your email address" formControlName="email" [ngClass]="{ 'is-invalid': FC.email.touched && FC.email.invalid }" required>
                             <div *ngIf="FC.email.touched && FC.email.invalid" class="invalid-feedback">
                                 <div *ngIf="FC.email.errors.required">email is required.</div>
                             </div>
@@ -19,7 +19,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
                         <div class="col-sm-9 my-auto">
-                            <input type="password" class="form-control" id="inputPassword3" formControlName="password" [ngClass]="{ 'is-invalid': FC.password.touched && FC.password.invalid }" required>
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="enter your password" formControlName="password" [ngClass]="{ 'is-invalid': FC.password.touched && FC.password.invalid }" required>
                             <div *ngIf="FC.password.touched && FC.password.invalid" class="invalid-feedback">
                                 <div *ngIf="FC.password.errors.required">password is required.</div>
                             </div>

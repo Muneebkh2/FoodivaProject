@@ -8,8 +8,8 @@ import { TokenService } from './token.service';
 export class RestApiService {
 
     // APP Host URL
-    host = 'http://127.0.0.1:8000/';
-    // host = 'https://foodivausa.com/api/public/';
+    //host = 'http://127.0.0.1:8000/';
+    host = 'https://foodivausa.com/api/public/';
     apiURL = this.host + 'api/';
     
     // API Token headers

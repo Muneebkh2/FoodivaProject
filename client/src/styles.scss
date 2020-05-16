@@ -101,6 +101,9 @@ section.heading{
     background-color: transparent;
     color: #960202;
 }
+.btn-outline-primary:hover{
+    color: #ffffff!important;
+}
 
 // customForm
 form.custom-form {
@@ -245,8 +248,14 @@ footer address ul li::before{
     color: #ffffff;
     padding: 0px 5px 0px 0px;
 }
+.navbar-brand img{
+    width: 75%;
+}
 @media(max-width: 767px){
 
+    .navbar-brand img{
+        width: 50%;
+    }
     .product__details h3{
         font-size: 18px;
     }

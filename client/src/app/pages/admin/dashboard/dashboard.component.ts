@@ -18,12 +18,13 @@ export class DashboardComponent implements OnInit {
     orderCounts: string = ''
     photoURL: string = ''
 
-    constructor(private server: RestApiService, private router: Router, private displayMsg: NzNotificationService, private modalService: NzModalService) { }
+    constructor(private server: RestApiService, private router: Router, private displayMsg: NzNotificationService, private modalService: NzModalService) { 
+        this.getAllOrders() // getAllOrders
+        this.getALlCounts()
+    }
 
     ngOnInit(): void {
         this.photoURL = this.server.host + 'products/images/'
-        this.getAllOrders() // getAllOrders
-        this.getALlCounts()
     }
 
     parseJson(value){
@@ -36,7 +37,6 @@ export class DashboardComponent implements OnInit {
     getALlCounts(){
         return this.server.getDashboardCounts().subscribe(
             (res:any) => {
-                console.log(res);
                 this.categoryCounts = res[0]
                 this.productCounts = res[1]
                 this.orderCounts = res[2]
@@ -54,7 +54,6 @@ export class DashboardComponent implements OnInit {
         return this.server.getNewOrders().subscribe(
             (res: any) => {
                 this.ordersData = res
-                console.log(this.ordersData);
             },
             (err: any) => {
                 this.displayMsg.create(

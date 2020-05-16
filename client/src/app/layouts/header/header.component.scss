@@ -1,3 +1,6 @@
+.navbar-brand{
+    padding-bottom: 0;
+}
 ul.navbar-nav {
     li.nav-item {
         padding: 0px 10px;
@@ -7,10 +10,12 @@ ul.navbar-nav {
             text-transform: uppercase;
             color: #960202;
             font-weight: 600;
-            padding: 7px 7px;
+            // padding: 7px 7px;
+            padding: 10px 7px;
+            border-bottom: 5px solid transparent;
             &.active,
             &:hover {
-                border-bottom: 5px solid #960202;
+                border-bottom-color: #960202;
             }
         }
     }
