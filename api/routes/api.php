@@ -3,10 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('test', function () {
-    return response()->json(["message", "its working.."]);
-});
-
 // Auth Routes >>>
 Route::post('login', 'Api\UserController@login');
 Route::post('register', 'Api\UserController@register');
