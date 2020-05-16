@@ -14,10 +14,10 @@ class CreateProductTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
-            $table->json('sku');
-            $table->string('image')->nullable();
+            $table->json('sku')->default('{"status":"available", "stock":"50"}');
+            $table->string('image')->nullable()->default('default.jpeg');
             $table->timestamps();
         });
     }
