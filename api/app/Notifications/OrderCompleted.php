@@ -43,7 +43,7 @@ class OrderCompleted extends Notification
         return (new MailMessage)
                     ->greeting('Hello!')
                     ->line('Your order has been received Successfully!')
-                    ->line('You will Receiev Payment Invoice of this order within 24 hours')
+                    ->line('You will Receive Payment Invoice of this order within 24 hours')
                     ->line('Thank you for using our application!'); 
     }
 

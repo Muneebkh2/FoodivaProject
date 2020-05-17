@@ -24,6 +24,7 @@ class OrderController extends Controller
 
     public function createOrder(Request $request)
     {
+
         $this->validate($request, [
             'firstname' => 'required|string',
             'lastname' => 'required',
@@ -40,6 +41,9 @@ class OrderController extends Controller
 
         ]);
 
+        $latestOrder = Order::orderBy('created_at','DESC')->first();
+        $order_no = str_pad($latestOrder->id + 1, 8, "0", STR_PAD_LEFT);
+
         // var initalized..
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
@@ -53,8 +57,8 @@ class OrderController extends Controller
         $zipcode = $request->input('zipcode');
         $products = $request->input('products_id');
         // [$quantity] = $request->input('quantity');
-        $unique = 00000;
-        $order_no = $unique + 1; 
+        // $unique = 00000;
+        // $order_no = $unique + 1; 
         try {
 
             $order = new Order();

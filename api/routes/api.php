@@ -26,6 +26,7 @@ Route::get('products/id/{id}', 'Api\ProductController@getProductsById');
 // Order Routes >>>
 Route::get('orders/all', 'Api\OrderController@getAllOrders');
 Route::get('orders/id/{id}', 'Api\OrderController@getOrdersById');
+Route::post('orders/create', 'Api\OrderController@createOrder');
 
 // Authenticated routes for admin panel...
 Route::group(['middleware' => 'auth:api'], function () {
@@ -44,7 +45,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::delete('products/delete/{id}', 'Api\ProductController@destroyProduct');
     
     // Order Routes >>>
-    Route::post('orders/create', 'Api\OrderController@createOrder');
     Route::put('orders/edit/{id}', 'Api\OrderController@updateOrder');
     Route::delete('orders/delete/{id}', 'Api\OrderController@destroyOrder');
 
