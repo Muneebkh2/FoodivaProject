@@ -17,6 +17,7 @@ export class ProductInfoComponent implements OnInit {
     quantity: number = 0
     photoURL = ''
     disableCartBTN: boolean = true
+    showCartLink: any;
 
     constructor(private api: RestApiService, private displayMsg: NzNotificationService) { }
 
@@ -40,17 +41,40 @@ export class ProductInfoComponent implements OnInit {
     getProductData(id) {
         return this.api.getProductsByID(id).subscribe(
             (res: any) => {
-                console.log(res)
+                // console.log(res)
                 this.productDetails = res
                 this.productStatus = JSON.parse(res.sku).status
                 this.productStock = parseInt(JSON.parse(res.sku).stock)
-                console.log(this.productStatus)
-                console.log(this.productStock)
+                // console.log(this.productStatus)
+                // console.log(this.productStock)
             },
             err => {
                 console.log(err)
             }
         )
+    }
+
+    getCartItem() {
+        
+        if (localStorage.getItem('cart') != null) {
+            let cart: any = JSON.parse(localStorage.getItem('cart'));
+            let index: number = -1;
+            
+            for (var i = 0; i < cart.length; i++) {
+                let item = JSON.parse(cart[i]);
+                if (item.product.id == this.productDetails.id) {
+                    index = i;
+                    break;
+                }
+            }
+            
+            if (index != -1) {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
     }
 
     addToCart() {
@@ -61,7 +85,7 @@ export class ProductInfoComponent implements OnInit {
 
         if (this.quantity > this.productStock) {
             this.displayMsg.create(
-                'error', 'Error', 'Prodect stock not available for your required quantity ! just ('+this.productStock+') products available.',
+                'error', 'Error', 'Prodect stock not available for your required quantity ! just (' + this.productStock + ') products available.',
                 { nzDuration: 4500 }
             );
             this.disableCartBTN = true
@@ -100,6 +124,6 @@ export class ProductInfoComponent implements OnInit {
             }
         }
 
-        console.log("MY Cart: ", JSON.parse(localStorage.getItem('cart')));
+        // console.log("MY Cart: ", JSON.parse(localStorage.getItem('cart')));
     }
 }

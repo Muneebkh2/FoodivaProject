@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RestApiService } from 'src/app/services/rest-api.service';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd';
-// import * as $ from 'jquery';
+import * as $ from 'jquery';
 
 @Component({
     selector: 'app-add-products',
@@ -31,10 +31,10 @@ export class AddProductsComponent implements OnInit {
 
     ngOnInit(): void {
         this.getCategory() // get all categories to craete products
-        // $('#product_image').on('change',function(){
-        //     var fileName = $(this).val();// get the file name
-        //     $(this).next('.custom-file-label').html(fileName);// replace the "Choose a file" label
-        // });
+        $('#product_image').on('change',function(){
+            var fileName = $(this).val();// get the file name
+            $(this).next('.custom-file-label').html(fileName);// replace the "Choose a file" label
+        });
     }
 
     getCategory(){
@@ -65,6 +65,8 @@ export class AddProductsComponent implements OnInit {
         formData.append("categories_id", this.productForm.get('category').value);
         formData.append("sku", "empty");
         // formData.append("description", this.productForm.get('description').value);
+        
+        console.log("Product:" ,formData);
         
 
         return this.server.createProducts(formData).subscribe(

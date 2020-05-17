@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { RestApiService } from 'src/app/services/rest-api.service';
 
 declare interface RouteInfo {
     path: string
@@ -24,17 +25,19 @@ export const navbarROUTES: RouteInfo[] = [
 export class HeaderComponent implements OnInit {
 
     public menuItems: any[]
-    countCartProducts: number = 0
+    // countCartProducts: number = 0
 
-    constructor() { }
+    constructor(public rest: RestApiService) {
+        // this.countCartProducts = rest.getCartData();
+    }
 
     ngOnInit(): void {
         this.main__menu()
-        let cart: any = JSON.parse(localStorage.getItem('cart'))
-        // console.log(cart)
-        if (cart != null) {
-            this.countCartProducts = cart.length
-        }
+        // let cart: any = JSON.parse(localStorage.getItem('cart'))
+        // // console.log(cart)
+        // if (cart != null) {
+        //     this.countCartProducts = cart.length
+        // }
         $(document).ready(function () {
             $(".navbar-toggler").on("click", function () {
                   $(this).toggleClass("active");

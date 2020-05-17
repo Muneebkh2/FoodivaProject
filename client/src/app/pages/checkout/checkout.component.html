@@ -17,7 +17,8 @@
                     <span class="badge badge-custom badge-pill">{{ countCartProducts }}</span>
                 </h4>
                 <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let cartItem of cartProducts">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed"
+                        *ngFor="let cartItem of cartProducts">
                         <div>
                             <h6 class="my-0">{{cartItem.product.name}}</h6>
                             <!-- <small class="text-muted text-right">Brief description</small> -->
@@ -33,14 +34,18 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
-                            <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': FC.firstname.touched && FC.firstname.invalid }" id="firstName" placeholder="" value="" required>
+                            <input type="text" formControlName="firstname" class="form-control"
+                                [ngClass]="{ 'is-invalid': FC.firstname.touched && FC.firstname.invalid }"
+                                id="firstName" placeholder="" value="" required>
                             <div *ngIf="FC.firstname.touched && FC.firstname.invalid" class="invalid-feedback">
                                 <div *ngIf="FC.firstname.errors.required">Valid first name is required.</div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="lastName">Last name</label>
-                            <input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': FC.lastname.touched && FC.lastname.invalid }" id="lastName" placeholder="" value="" required>
+                            <input type="text" formControlName="lastname" class="form-control"
+                                [ngClass]="{ 'is-invalid': FC.lastname.touched && FC.lastname.invalid }" id="lastName"
+                                placeholder="" value="" required>
                             <div *ngIf="FC.lastname.touched && FC.lastname.invalid" class="invalid-feedback">
                                 <div *ngIf="FC.lastname.errors.required">Valid last name is required.</div>
                             </div>
@@ -48,7 +53,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="compoany_name">Company Name</label>
-                        <input type="text" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': FC.company.touched && FC.company.invalid }" id="company_name" placeholder="Username" required>
+                        <input type="text" formControlName="company" class="form-control"
+                            [ngClass]="{ 'is-invalid': FC.company.touched && FC.company.invalid }" id="company_name"
+                            placeholder="Username" required>
                         <div *ngIf="FC.company.touched && FC.company.invalid" class="invalid-feedback">
                             <div *ngIf="FC.company.errors.required">company name is required.</div>
                         </div>
@@ -56,23 +63,31 @@
 
                     <div class="mb-3">
                         <label for="email">Email</label>
-                        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': FC.email.touched && FC.email.invalid }" id="email" placeholder="you@example.com">
+                        <input type="email" formControlName="email" class="form-control"
+                            [ngClass]="{ 'is-invalid': FC.email.touched && FC.email.invalid }" id="email"
+                            placeholder="you@example.com">
                         <div *ngIf="FC.email.touched && FC.email.invalid" class="invalid-feedback">
-                            <div *ngIf="FC.email.errors.required">Please enter a valid email address for shipping updates.</div>
+                            <div *ngIf="FC.email.errors.required">Please enter a valid email address for shipping
+                                updates.</div>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="phone">Phone</label>
-                        <input type="phone" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': FC.phone.touched && FC.phone.invalid }" id="phone" placeholder="+123 456 7890">
+                        <input type="phone" formControlName="phone" class="form-control"
+                            [ngClass]="{ 'is-invalid': FC.phone.touched && FC.phone.invalid }" id="phone"
+                            placeholder="+123 456 7890">
                         <div *ngIf="FC.phone.touched && FC.phone.invalid" class="invalid-feedback">
-                            <div *ngIf="FC.phone.errors.required">Please enter a valid email address for shipping updates.</div>
+                            <div *ngIf="FC.phone.errors.required">Please enter a valid email address for shipping
+                                updates.</div>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="address">Address</label>
-                        <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': FC.address.touched && FC.address.invalid }" id="address" placeholder="1234 Main St" required>
+                        <input type="text" formControlName="address" class="form-control"
+                            [ngClass]="{ 'is-invalid': FC.address.touched && FC.address.invalid }" id="address"
+                            placeholder="1234 Main St" required>
                         <div *ngIf="FC.address.touched && FC.address.invalid" class="invalid-feedback">
                             <div *ngIf="FC.address.errors.required">Please enter your shipping address.</div>
                         </div>
@@ -80,7 +95,8 @@
 
                     <div class="mb-3">
                         <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                        <input type="text" formControlName="address2" class="form-control" id="address2" placeholder="Apartment or suite">
+                        <input type="text" formControlName="address2" class="form-control" id="address2"
+                            placeholder="Apartment or suite">
                     </div>
 
                     <div class="row">
@@ -98,7 +114,57 @@
                             <label for="state">State</label>
                             <select class="custom-select d-block w-100" id="state" formControlName="state" required>
                                 <option value="">Choose...</option>
-                                <option>California</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
                             </select>
                             <div *ngIf="FC.state.touched && FC.state.invalid" class="invalid-feedback">
                                 <div *ngIf="FC.state.errors.required">Please select a valid state.</div>
@@ -106,7 +172,9 @@
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="zip">Zip</label>
-                            <input type="text" class="form-control" formControlName="zipcode" [ngClass]="{ 'is-invalid': FC.zipcode.touched && FC.zipcode.invalid }" id="zip" placeholder="" required>
+                            <input type="text" class="form-control" formControlName="zipcode"
+                                [ngClass]="{ 'is-invalid': FC.zipcode.touched && FC.zipcode.invalid }" id="zip"
+                                placeholder="" required>
                             <div *ngIf="FC.zipcode.touched && FC.zipcode.invalid" class="invalid-feedback">
                                 <div *ngIf="FC.zipcode.errors.required">Zip code required.</div>
                             </div>
@@ -121,7 +189,14 @@
                                 within 24 hours we will email invoice of your order.</p>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-custom btn-large my-5 w-100" [disabled]="!checkoutForm.valid"> Proceed To Checkout</button>
+                    <button type="submit" class="btn btn-custom btn-large my-5 w-100" [disabled]="!checkoutForm.valid || isSubmittingFLAG">
+                        <span [class.d-none]="isSubmittingFLAG">
+                            Proceed To Checkout
+                        </span>
+                        <span [class.d-none]="!isSubmittingFLAG">
+                            Processing&nbsp;<i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
                 </form>
             </div>
         </div>

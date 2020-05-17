@@ -13,6 +13,7 @@ export class CheckoutComponent implements OnInit {
     countCartProducts: number = 0;
     cartProducts: any = [];
     submitted = false
+    isSubmittingFLAG = false
     // initalize form and form controls
     checkoutForm = new FormGroup({
         firstname: new FormControl('', [Validators.required]),
@@ -43,32 +44,33 @@ export class CheckoutComponent implements OnInit {
     getCartItems(){
         if (localStorage.getItem('cart') != null) {
             let cart: any = JSON.parse(localStorage.getItem('cart'));
-            console.log(cart)
+            // console.log(cart)
             this.countCartProducts = cart.length
             for (var i = 0; i < cart.length; i++) {
                 let item = JSON.parse(cart[i]);
-                console.log(item);
+                // console.log(item);
                 this.cartProducts.push(item)
-                console.log(item.product.name);
+                // console.log(item.product.name);
             }
         }else{
             this.router.navigate(['products'])
-            console.log("its working..")
+            // console.log("its working..")
         } 
     }
 
     createOrder(){
-        console.log(this.cartProducts);
+        this.isSubmittingFLAG = true
+        // console.log(this.cartProducts);
         let productsIDs:any = []
         
         this.cartProducts.forEach(element => {
             productsIDs.push({id: element.product.id,quantity: element.quantity})
         });
-        console.log(productsIDs);
+        // console.log(productsIDs);
         this.checkoutForm.controls['products_id'].setValue(productsIDs);
         // this.checkoutForm.controls['products_id'].setValue(productsIDs['product']['id']);
         // this.checkoutForm.controls['quantity'].setValue(productsIDs['quantity']);
-        console.log(this.checkoutForm.value);
+        // console.log(this.checkoutForm.value);
         // let productsIDs = []
         // let quantity = []
         // this.cartProducts.forEach(element => {
@@ -80,8 +82,9 @@ export class CheckoutComponent implements OnInit {
         
         return this.server.createOrders(this.checkoutForm.value).subscribe(
             (res:any) => {
-                this.submitted = false
-                console.log("new order created.")
+                // this.submitted = false
+                // console.log("new order created.")
+                this.isSubmittingFLAG = false
                 this.clearCart()
                 this.router.navigate(['/thank-you-for-order'])
                 this.displayMsg.create(
@@ -90,7 +93,7 @@ export class CheckoutComponent implements OnInit {
                 );
             },
             (err:any) =>{
-                this.submitted = false
+                this.isSubmittingFLAG = false
                 console.log("failed: " + err)
                 this.displayMsg.create(
                     'error', 'Error', err.error.message,

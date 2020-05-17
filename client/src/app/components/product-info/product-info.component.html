@@ -2,18 +2,19 @@
     <div class="col-lg-6">
         <div class="product__details">
             <h3>{{ productDetails.name }}</h3>
-            <p class="mb-3">Availability:
+            <!-- <p class="mb-3">Availability:
                 <span class="badge badge-pill badge-success" *ngIf="productStatus == 'available'">in stock</span>
                 <span class="badge badge-pill badge-danger" *ngIf="productStatus == 'unavailable'">out of stock</span>
-            </p>
+            </p> -->
             <!-- <p>
                 Lorem ipsum dolor sit amet, ut et, ac vel nibh a risus, in nisl vehicula etiam
                 pharetra integer, pretium mus iaculis suspendisse suscipit vel.
             </p> -->
 
             <input type="number" name="quantity" id="quantity" class="custom-form-control mb-2" min="0" max={{productStock}} (change)="changeQTY()" [(ngModel)]="quantity">
-            <button type="button" class="col btn btn-outline-danger btn-custom rounded" (click)="addToCart()" [disabled]="disableCartBTN">Add to
+            <button type="button" class="col btn btn-outline-danger btn-custom rounded mb-3" (click)="addToCart()" [disabled]="disableCartBTN">Add to
                 cart</button>
+            <a class="my__link" [ngClass]="{'d-none': getCartItem()}" href="/cart">View Cart</a>
         </div>
     </div>
     <div class="col-lg-6">
