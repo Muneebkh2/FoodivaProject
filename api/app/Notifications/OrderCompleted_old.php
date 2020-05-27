@@ -3,9 +3,9 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 
 class OrderCompleted extends Notification
 {
@@ -44,7 +44,7 @@ class OrderCompleted extends Notification
                     ->greeting('Hello!')
                     ->line('Your order has been received Successfully!')
                     ->line('You will Receive Payment Invoice of this order within 24 hours')
-                    ->line('Thank you for using our Website!'); 
+                    ->line('Thank you for using our application!'); 
     }
 
     /**

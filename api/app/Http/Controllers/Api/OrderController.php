@@ -42,7 +42,7 @@ class OrderController extends Controller
         ]);
 
         $latestOrder = Order::orderBy('created_at','DESC')->first();
-        $order_no = str_pad($latestOrder->id + 1, 8, "0", STR_PAD_LEFT);
+        $order_no = "ORD" . str_pad($latestOrder->id + 1, 5, "0", STR_PAD_LEFT);
 
         // var initalized..
         $firstname = $request->input('firstname');
@@ -78,7 +78,8 @@ class OrderController extends Controller
             foreach ($products as $key => $value) {
                 $order->Product()->attach($value['id'], ['quantity' => $value['quantity']]);
             }
-            $order->notify(new OrderCompleted($order));
+
+            $order->notify(new OrderCompleted());
 
             return response()->json(['message' => 'New Order Created.'], $this->successStatus);
 
@@ -87,6 +88,20 @@ class OrderController extends Controller
         }
     }
 
+    public function test(){
+        $latestOrder = Order::orderBy('created_at','DESC')->first();
+        if($latestOrder != null){
+            $order_no = "ORD" . str_pad($latestOrder->id + 1, 5, "0", STR_PAD_LEFT);
+            // $gen_order_number = substr($latestOrder->id, 3);
+            // $order_no = 'ORD' . sprintf('%06d', intval($gen_order_number) + 1) +1;
+        }else{
+            $order_no = "ORD" . str_pad(0 + 1, 5, "0", STR_PAD_LEFT);
+            // $gen_order_number = substr(0, 3);
+            // $order_no = 'ORD' . sprintf('%06d', intval($gen_order_number) + 1);
+        }
+        return response()->json([$latestOrder, $order_no], $this->successStatus);
+    }
+    
     public function updateOrder(Request $request, $id)
     {
         $this->validate($request, [
