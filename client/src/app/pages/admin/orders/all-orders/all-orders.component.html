@@ -33,10 +33,14 @@
                                 <td>{{ data.company }}</td>
                                 <td>{{ data.created_at }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-outline-primary" data-toggle="modal" [attr.data-target]="'#orderModal'+data.id">
+                                    <a class="btn btn-sm btn-outline-primary"  [routerLink]="[ '/admin/orders/'+data.id]">
                                         <i class="fal fa-eye"> </i>
                                         View Order
                                     </a>
+                                    <!-- <a class="btn btn-sm btn-outline-primary" data-toggle="modal" [attr.data-target]="'#orderModal'+data.id">
+                                        <i class="fal fa-eye"> </i>
+                                        View Order
+                                    </a> -->
                                     <!-- Modal -->
                                     <div class="modal fade" [attr.id]="'orderModal'+data.id" tabindex="-1" role="dialog"
                                         aria-labelledby="orderModal" aria-hidden="true">
