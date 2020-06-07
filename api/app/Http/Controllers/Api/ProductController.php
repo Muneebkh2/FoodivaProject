@@ -114,7 +114,7 @@ class ProductController extends Controller
             return response()->json(['message' => 'Product not found !'], 409);
         } else {
             // delete foriegn key .. 
-            $product->Category()->attach($categories);
+            // $product->Category()->detach($categories);
             $product->delete();
             
             return response()->json(['message' => 'Product Deleted Succesfully.'], $this->successStatus);
