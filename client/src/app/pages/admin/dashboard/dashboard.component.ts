@@ -13,17 +13,18 @@ export class DashboardComponent implements OnInit {
     // var initalized...
     ordersData: any
     isInProgress: boolean;
-    categoryCounts: string = ''
-    productCounts: string = ''
-    orderCounts: string = ''
-    photoURL: string = ''
+    categoryCounts: string = '0'
+    productCounts: string = '0'
+    orderCounts: string = '0'
+    photoURL: string = '0'
 
-    constructor(private server: RestApiService, private router: Router, private displayMsg: NzNotificationService, private modalService: NzModalService) { 
+    constructor(private server: RestApiService, private router: Router, private displayMsg: NzNotificationService, private modalService: NzModalService) {     
+    }
+    
+    ngOnInit(): void {
         this.getAllOrders() // getAllOrders
         this.getALlCounts()
-    }
-
-    ngOnInit(): void {
+        // window.location.reload()
         this.photoURL = this.server.host + 'products/images/'
     }
 
@@ -42,10 +43,10 @@ export class DashboardComponent implements OnInit {
                 this.orderCounts = res[2]
             },
             (err:any) => {
-                this.displayMsg.create(
-                    'error', 'Error', err.error.message,
-                    { nzDuration: 3000 }
-                );
+                // this.displayMsg.create(
+                //     'error', 'Error', err.error.message,
+                //     { nzDuration: 3000 }
+                // );
             }
         )
     }
@@ -56,10 +57,10 @@ export class DashboardComponent implements OnInit {
                 this.ordersData = res
             },
             (err: any) => {
-                this.displayMsg.create(
-                    'error', 'Error', err.error.message,
-                    { nzDuration: 3000 }
-                );
+                // this.displayMsg.create(
+                //     'error', 'Error', err.error.message,
+                //     { nzDuration: 3000 }
+                // );
             }
         )
     }

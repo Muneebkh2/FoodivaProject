@@ -94,64 +94,10 @@
                                 <td>{{ data.company }}</td>
                                 <td>{{ data.created_at }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-outline-primary" data-toggle="modal" [attr.data-target]="'#orderModal'+data.id">
+                                    <a class="btn btn-sm btn-outline-primary"  [routerLink]="[ '/admin/orders/'+data.id]">
                                         <i class="fal fa-eye"> </i>
                                         View Order
                                     </a>
-                                    <!-- Modal -->
-                                    <div class="modal fade" [attr.id]="'orderModal'+data.id" tabindex="-1" role="dialog"
-                                        aria-labelledby="orderModal" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content order-modal">
-                                                <div class="modal-header py-2">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Order #{{data.order_no}}</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p class="d-flex justify-content-between border">
-                                                        <span class="m-auto">Name: {{data.name}}</span>
-                                                        <span class="m-auto">Company: {{data.company}}</span>
-                                                    </p>
-                                                    <p class="d-flex justify-content-between border">
-                                                        <span class="m-auto">Email: {{data.email}}</span>
-                                                        <span class="m-auto">Phone: {{data.phone}}</span>
-                                                    </p>
-                                                    <p class="d-flex justify-content-between border">
-                                                        <span class="m-auto">Adress: {{data.address}}</span>
-                                                        <span class="m-auto">Sate: {{data.state}}</span>
-                                                        <span class="m-auto">Country: {{data.country}}</span>
-                                                    </p>
-                                                    <!-- <p class="d-flex justify-content-between border">
-                                                    </p> -->
-                                                    <div class="dropdown-divider"></div>
-                                                    <h4>Products:</h4>
-                                                    <div class="card mb-2" *ngFor="let Products of data.product">
-                                                        <div class="row px-3">
-                                                            <div class="col-lg p-0 d-none d-lg-block">
-                                                                <img src="{{ photoURL + Products.image }}" alt="" class="img-fluid" style="height: 65px;">
-                                                            </div>
-                                                            <div class="col-lg-10">
-                                                                <div class="card-body px-0 py-1 mt-2">
-                                                                    <h5 class="card-title">{{Products.name}}</h5>
-                                                                    <p class="card-text d-flex justify-content-between">
-                                                                        <small class="text-muted">Quantity: {{Products.pivot['quantity']}}</small>
-                                                                        <small class="text-muted">Stock: {{ parseJson(Products.sku).stock}}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer py-2">
-                                                    <button type="button" class="btn btn-sm btn-outline-danger"
-                                                        data-dismiss="modal">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </td>
                             </tr>
                         </tbody>
