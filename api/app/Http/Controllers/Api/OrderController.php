@@ -18,7 +18,7 @@ class OrderController extends Controller
 
     public function getOrdersById($id)
     {
-        $orders = Order::find($id);
+        $orders = Order::with('Product')->where('id', $id)->get();
         return response()->json($orders, $this->successStatus);
     }
 
