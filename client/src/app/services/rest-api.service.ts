@@ -29,7 +29,7 @@ export class RestApiService {
     /* 
     * *** 
     * Authentication  
-    * End points methods
+    * End points methods`
     * **********
     */
     // ** Login
@@ -108,6 +108,9 @@ export class RestApiService {
     }
     deleteOrders(id) {
         return this.http.delete(this.apiURL + 'orders/delete/' + id, {headers: this.authhttpOptions});
+    }
+    getOrdersById(id){
+        return this.http.get(this.apiURL + 'orders/id/' + id, {headers: this.authhttpOptions});
     }
     /* 
     * *** 
