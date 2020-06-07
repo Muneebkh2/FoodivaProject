@@ -28,6 +28,7 @@ import { AddProductsComponent } from './pages/admin/products/add-products/add-pr
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
 import { AllCategoryComponent } from './pages/admin/categories/all-category/all-category.component';
 import { AllOrdersComponent } from './pages/admin/orders/all-orders/all-orders.component';
+import { ViewOrderComponent } from './pages/admin/orders/view-order/view-order.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { SettingsComponent } from './pages/admin/settings/settings.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
@@ -63,7 +64,8 @@ registerLocaleData(en);
         SidebarComponent,
         AllOrdersComponent,
         SettingsComponent,
-        DashboardComponent
+        DashboardComponent,
+        ViewOrderComponent
     ],
     imports: [
         BrowserModule,

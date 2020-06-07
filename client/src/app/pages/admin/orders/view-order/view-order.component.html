@@ -1,0 +1,57 @@
+<section class="data_section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-lg-9">
+                <div class="row mb-3">
+                    <div class="col-lg-7">
+                        <h2 class="heading_admin_pages">View Orders / {{ ordersData.order_no }} </h2>
+                    </div>
+                    <div class="col-lg-5 d-lg-flex justify-content-end mb-3">
+                        <button class="btn btn-inner ml-lg-2" [routerLink]="[ '/admin/orders/all']">
+                            <i class="fal fa-arrow-alt-left mr-2"> </i>
+                            Back
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="content_box">
+                            <p class="d-flex justify-content-between border">
+                                <span class="m-auto">Name: {{ ordersData.name }}</span>
+                                <span class="m-auto">Company: {{ ordersData.company }}</span>
+                            </p>
+                            <p class="d-flex justify-content-between border">
+                                <span class="m-auto">Email: {{ ordersData.email }}</span>
+                                <span class="m-auto">Phone: {{ ordersData.phone }}</span>
+                            </p>
+                            <p class="d-flex justify-content-between border">
+                                <span class="m-auto">Adress: {{ ordersData.address }}</span>
+                                <span class="m-auto">State: {{ ordersData.state }}</span>
+                                <span class="m-auto">Country: {{ ordersData.country }}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-2" *ngFor="let Products of ordersData.product">
+                    <div class="row px-3">
+                        <div class="col-lg p-0 d-none d-lg-block">
+                            <img src="{{ photoURL + Products.image }}" alt="" class="img-fluid" style="height: 65px;">
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="card-body px-0 py-1 mt-2">
+                                <h5 class="card-title">{{ Products.name }}</h5>
+                                <p class="card-text d-flex justify-content-between">
+                                    <small class="text-muted">Quantity: {{ Products.pivot['quantity'] }}</small>
+                                    <small class="text-muted">Stock: {{ parseJson(Products.sku).stock }}</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

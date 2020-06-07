@@ -18,6 +18,7 @@ import { AddProductsComponent } from './pages/admin/products/add-products/add-pr
 import { AllCategoryComponent } from './pages/admin/categories/all-category/all-category.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
 import { AllOrdersComponent } from './pages/admin/orders/all-orders/all-orders.component';
+import { ViewOrderComponent } from './pages/admin/orders/view-order/view-order.component';
 import { SettingsComponent } from './pages/admin/settings/settings.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
@@ -37,6 +38,7 @@ const routes: Routes = [
     { path: 'admin/category/all', component: AllCategoryComponent, canActivate: [AuthGuardService] },
     { path: 'admin/category/add', component: AddCategoryComponent, canActivate: [AuthGuardService] },
     { path: 'admin/orders/all', component: AllOrdersComponent, canActivate: [AuthGuardService] },
+    { path: 'admin/orders/:ID', component: ViewOrderComponent, canActivate: [AuthGuardService] },
     { path: 'admin/settings', component: SettingsComponent, canActivate: [AuthGuardService] },
     { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
     // otherwise redirect to home
