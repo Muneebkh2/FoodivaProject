@@ -7,7 +7,7 @@
     "require": {
         "php": "^7.0",
         "fideloper/proxy": "*",
-        "laravel/framework": "5.7",
+        "laravel/framework": "6.20.12",
         "laravel/tinker": "*",
         "laravel/passport": "*",
         "symfony/translation": "4.3.8"
